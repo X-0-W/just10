@@ -1,2 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="cards">
+  <% Listing.all.each do |listing| %>
+    <%# link_to listing_path(@listing) do %>
+      <div class="card">
+        <% if listing.photo.attached? %>
+          <%= image_tag listing.photo, crop: :fill, size:100 %>
+        <% else %>
+          <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+        <% end %>
+      </div>
+    <%# end %>
+  <% end %>
+</div>

@@ -6,6 +6,7 @@ class ListingsController < ApplicationController
   end
 
   def index
+    @listings = Listing.all
   end
 
   def new
