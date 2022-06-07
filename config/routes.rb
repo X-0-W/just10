@@ -13,7 +13,3 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 end
-
-# patch '/transactions/:id/accept', to: 'transactions#accept', as :accept
-# /transactions/:id/accept
-# /transactions/:id/reject
