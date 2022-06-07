@@ -10,3 +10,35 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.navbar-dropdown img {
+  width: 40px;
+}
+.dropdown-menu  {
+  left: 10px
+}
+
+.dropdown-menu-end[data-bs-popper] {
+  left: 0;
+  top: 50px;
+  height: 692px;
+  width: 335px;
+  font-size: xx-large;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.navbar-logo {
+  padding: 5px 49px;
+  background-image: linear-gradient(90deg, #faf0d78a, #ffd9c078, #8cc0de8a);
+  border-radius: 30px;
+  font-size: x-large;
+  font-weight: bold;
+  color: gray;
+  text-shadow: #0000001a 1px 2px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
