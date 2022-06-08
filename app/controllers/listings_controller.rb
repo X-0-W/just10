@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
+
   end
 
   def index

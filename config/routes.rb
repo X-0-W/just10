@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :listings, except: [:destroy] do
     resources :transactions, only: [:new, :create]
   end
@@ -13,3 +14,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 end
+
+# patch '/transactions/:id/accept', to: 'transactions#accept', as :accept
+# /transactions/:id/accept
+# /transactions/:id/reject

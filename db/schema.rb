@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_112031) do
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "pickup_time"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "listing_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_112031) do
     t.string "first_name"
     t.string "last_name"
     t.string "address"
-    t.integer "score"
+    t.float "score", default: 0.0
     t.float "lat"
     t.float "long"
     t.string "phone"
