@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// general CSS style e.g. fonts, remove all text decoration on links
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
