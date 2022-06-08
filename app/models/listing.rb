@@ -5,4 +5,5 @@ class Listing < ApplicationRecord
   validates :collection_instruction, length: { maximum: 500 }
 
   has_one_attached :photo
+  has_many :orders
 end
