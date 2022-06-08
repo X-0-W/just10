@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: sticky;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -25,7 +26,6 @@
   font-size: xx-large;
   text-align: center;
   display: flex;
-  position: sticky;
   flex-direction: column;
   justify-content: space-evenly;
 }
