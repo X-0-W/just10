@@ -87,16 +87,19 @@ p "11 seeded"
 file = URI.open('https://images.unsplash.com/photo-1634798245965-03669c757183?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80')
 list12 = Listing.new(title: "Wooden stool", collection_instruction: "Will leave out on the pavement.", user: User.all.sample)
 list12.photo.attach(io: file, filename: "woodenStool.png", content_type: 'image/png')
+list12.save!
 p "12 seeded"
 
 file = URI.open('https://images.unsplash.com/photo-1591935893481-4a5fa6671ec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')
 list13 = Listing.new(title: "Wooden rocking chair", collection_instruction: "Will bring out on buyer arrival.", user: User.all.sample)
 list13.photo.attach(io: file, filename: "woodenRockingChair.png", content_type: 'image/png')
+list13.save!
 p "13 seeded"
 
 file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
 list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: User.all.sample)
 list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
+list14.save!
 p "14 seeded"
 
 p "seeded"
