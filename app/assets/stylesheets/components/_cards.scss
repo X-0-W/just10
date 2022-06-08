@@ -29,6 +29,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
+  position: relative;
 }
 
 .index-card {
@@ -56,3 +57,9 @@
       }
     }
   }
+
+#listings-counter {
+  position: absolute;
+  top: -50px;
+  right: 0;
+}

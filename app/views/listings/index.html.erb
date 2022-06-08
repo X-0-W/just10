@@ -1,22 +1,17 @@
-<div class="listings-headers d-flex justify-content-between mt-2 mx-2">
-  <p class="mb-0"><strong><%= @listings.size %></strong> listings</p>
-  <p class="mb-0">Within: <strong> 10 km</strong> <i class="fas fa-caret-down"></i> </p>
-</div>
-<%# <p>sort by: </p> %>
-<%# <p>items per row: </p> %>
+<div data-controller="search" data-search-address-value="<%= params[:address] %>">
+  <div class="listings-headers d-flex justify-content-between mt-2 mx-2">
+    <select data-search-target="distance" data-action="change->search#fetchListings">
+      <% 10.times do |i| %>
+        <% if i < 9 %>
+          <option value="<%= i + 1 %>"><%= i + 1 %></option>
+        <% else %>
+          <option value="<%= i + 1 %>" selected><%= i + 1 %></option>
+        <% end %>
+      <% end %>
+  </select>
+  </div>
+  <%# <p>sort by: </p> %>
+  <%# <p>items per row: </p> %>
 
-<div class="index-cards m-2">
-  <% @listings.all.each do |listing| %>
-    <%= link_to listing_path(listing) do %>
-      <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path listing.photo.key %>)">
-        <div class="top-left-icon">
-          <%# <i class="fas fa-heart"></i> --> wishlist %>
-          <i class="far fa-heart"></i>
-        </div>
-        <div class="bottom-right-icon">
-          <p> <%  %> km</p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render "results", listings: @listings %>
 </div>
