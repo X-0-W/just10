@@ -37,6 +37,7 @@ list3.photo.attach(io: file, filename: "sunglasses.png", content_type: 'image/pn
 list3.save!
 p "3 seeded"
 
+
 file = URI.open('https://images.unsplash.com/photo-1521499892833-773a6c6fd0b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aXRlbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')
 list4 = Listing.new(title: "Camera", collection_instruction: "I can leave this at front porch", user: User.all.sample)
 list4.photo.attach(io: file, filename: "camera.png", content_type: 'image/png')
@@ -74,3 +75,4 @@ list9.save!
 p "9 seeded"
 
 p "seed completed"
+

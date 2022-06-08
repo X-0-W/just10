@@ -1,1 +1,14 @@
-<h1>show</h1>
+
+<h1> Title: <%= @listing.title %> </h1>
+<h2> Collection Instruction <%= @listing.collection_instruction %> </h2>
+
+<% unless @other_listings_from_same_user.empty? %>
+  <h3>These Item are from the same seller:</h3>
+  <ul>
+    <% @other_listings_from_same_user.each do |listing| %>
+      <li>
+        <%= listing.title %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
