@@ -3,8 +3,6 @@ class OrdersController < ApplicationController
 
   end
 
-  def
-
   def new
     @order = Order.new
   end
@@ -26,6 +24,8 @@ class OrdersController < ApplicationController
 
   def reject
   end
+
+  private
 
   def order_params
     params.require(:order).permit(:pickup_time)
