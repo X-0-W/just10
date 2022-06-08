@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-
   def show
     @listing = Listing.find(params[:id])
     @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
@@ -7,6 +6,11 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    if params[:query].present?
+      @listings = Listing.where("title ILIKE ?", "%#{params[:query]}")
+    else
+      @listings = Listing.all
+    end
   end
 
   def new
