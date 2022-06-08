@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_112031) do
+ActiveRecord::Schema.define(version: 2022_06_07_084608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,23 +75,23 @@ ActiveRecord::Schema.define(version: 2022_06_07_112031) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "approval"
-    t.bigint "transaction_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["transaction_id"], name: "index_reviews_on_transaction_id"
-  end
-
-  create_table "transactions", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.datetime "pickup_time"
-    t.integer "status", default: 0
+    t.integer "status", default: 0, null: false
     t.bigint "user_id", null: false
     t.bigint "listing_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["listing_id"], name: "index_transactions_on_listing_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "approval"
+    t.bigint "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2022_06_07_112031) do
   add_foreign_key "listings", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "reviews", "transactions"
-  add_foreign_key "transactions", "listings"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "orders", "listings"
+  add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
 end

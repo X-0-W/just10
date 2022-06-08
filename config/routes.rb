@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :listings, except: [:destroy] do
-    resources :transactions, only: [:new, :create]
+    resources :orders, only: [:new, :create]
   end
   resources :chatrooms, only: [:show]
-  resources :transactions, only: [:index] do
+  resources :orders, only: [:index] do
     member do
       patch :accept
       patch :reject
@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   end
 end
 
-# patch '/transactions/:id/accept', to: 'transactions#accept', as :accept
-# /transactions/:id/accept
-# /transactions/:id/reject
+# patch '/orders/:id/accept', to: 'orders#accept', as :accept
+# /orders/:id/accept
+# /orders/:id/reject
