@@ -9,7 +9,7 @@
 require 'open-uri'
 
 Review.destroy_all
-Transaction.destroy_all
+Order.destroy_all
 Listing.destroy_all
 User.destroy_all
 
@@ -75,4 +75,3 @@ list9.save!
 p "9 seeded"
 
 p "seed completed"
-

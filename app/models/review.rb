@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :transaction
-
+  belongs_to :order
   validates :approval, presence: true
 end
