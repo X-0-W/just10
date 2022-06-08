@@ -23,11 +23,12 @@
     }
   }
 }
-    
+
 // Xander Card
-.cards-2 {
+.index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
 }
 
 .index-card {
@@ -42,13 +43,16 @@
     .top-left-icon  {
       position: absolute;
       top: 2px;
-      right: 2px;
+      left: 2px;
     }
 
     .bottom-right-icon  {
       position: absolute;
       bottom: 2px;
-      left: 2px;
+      right: 2px;
+
+      p {
+        margin-bottom: 0;
+      }
     }
   }
-    
