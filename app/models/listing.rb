@@ -5,6 +5,7 @@ class Listing < ApplicationRecord
   validates :collection_instruction, length: { maximum: 500 }
 
   has_one_attached :photo
+  has_many :orders
 
   include PgSearch::Model
   pg_search_scope :search_by_title,
