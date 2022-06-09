@@ -118,13 +118,18 @@ list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'imag
 list14.save!
 p "14 seeded"
 
-Order.create(listing: list11, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
-Order.create(listing: list14, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
-Order.create(listing: list3, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
-Order.create(listing: list5, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
-Order.create(listing: list7, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
-Order.create(listing: list9, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+# assigns an order to a random user for each listing
+3.times do
+  Listing.all.each do |listing|
+    # Gets random user
+    user = User.all.sample
+    # If the random user created the listing then don't create order
+    if (user.listings.include? listing) == false
+      # Creates a new order with the current listing in the loop as well as the random user.
+      Order.create(listing: listing, user: user, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+    end
+  end
+end
 
-Listing.all.each { |listing| Order.create(listing: listing, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6)) }
 p "Orders seeded"
 p "seed completed"
