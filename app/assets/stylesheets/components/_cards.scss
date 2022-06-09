@@ -17,7 +17,7 @@
     // transition: transform 0.4s ease-in-out;
     // filter: grayscale(1s);
     transition: all 1s ease-in-out;
-    
+
     &:hover,
     &:active {
       transform: scale(1.05);
@@ -57,6 +57,7 @@
       margin-bottom: 0;
     }
   }
+}
 
 #listings-counter {
   position: absolute;
@@ -65,7 +66,7 @@
 }
 
 .listings-headers {
-  
+
   p {
     margin-bottom: 0;
   }
@@ -95,7 +96,8 @@
   }
 
 }
+
 // Callum card
 .scrollable-cards {
-  overflow: scroll ;
+  overflow: scroll;
 }
