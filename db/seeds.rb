@@ -13,10 +13,10 @@ Order.destroy_all
 Listing.destroy_all
 User.destroy_all
 
-User.create(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road, Officer, 3809", phone: "0420123456")
-User.create(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "43 Stewart Street, Richmond, Melbourne, 3121", phone: "0421123456")
-User.create(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Something", address: "156, Badger Weir Road, Badger Creek, 3777", phone: "0422123456")
-User.create(email: "ethan@gmail.com", password: "testing", first_name: "Ethan", last_name: "Li", address: "130 Swanston St, Melbourne VIC 3000", phone: "0423123456")
+User.create!(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road Officer", phone: "0420123456")
+User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "Inspire 9, 43 Stewart Street, Richmond", phone: "0421123456")
+User.create!(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Something", address: "156, Badger Weir Road, Badger Creek, 3777", phone: "0422123456")
+User.create!(email: "ethan@gmail.com", password: "testing", first_name: "Ethan", last_name: "Li", address: "Inspire 9, 43 Stewart Street, Richmond", phone: "0423123456")
 
 users = User.all
 
@@ -118,6 +118,13 @@ list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'imag
 list14.save!
 p "14 seeded"
 
-p "seeded"
+Order.create(listing: list11, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+Order.create(listing: list14, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+Order.create(listing: list3, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+Order.create(listing: list5, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+Order.create(listing: list7, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
+Order.create(listing: list9, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6))
 
+Listing.all.each { |listing| Order.create(listing: listing, user: User.all.sample, pickup_time: DateTime.new(2001, 2, 3, 4, 5, 6)) }
+p "Orders seeded"
 p "seed completed"
