@@ -9,28 +9,37 @@
   </div>
 </div>
 
-<h1> <%= @listing.title.capitalize %> </h1>
+<div class="">
+  <h1> <%= @listing.title.capitalize %> </h1>
+  <p style="test-align: right" >  Listed <%=  %> days ago </p>
+</div>
+
 <p> Collection: <%= @listing.collection_instruction %> </p>
 
 <div style="width: 100%; height: 300px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
-  <i class="far fa-comment"></i>
+<div class="d-flex justify-content-between">
+  <%= link_to 'Purchase', new_listing_order_path(@listing), class: "btn btn-primary" %>
+
+  <div class="btn btn-primary">
+    <%= link_to listing_path(@listing) do %>
+      <i class="far fa-comment"> seller </i>
+    <% end %>
+  </div>
+</div>
 
 <% unless @other_listings_from_same_user.empty? %>
   <p><strong>Other items from this seller:</strong></p>
-  <div class="index-cards m-2">
+  <div class="seller-other-cards m-2">
     <% @other_listings_from_same_user.each do |listing| %>
-      <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
-      <%= listing.title %>
+      <div class="seller-other-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
       <div class="top-left-icon">
         <%# <i class="fas fa-heart"></i> --> wishlist %>
         <i class="far fa-heart"></i>
-      </div>
-      <div class="bottom-right-icon">
-        <p> <%  %> km</p>
       </div>
     </div>
     <% end %>
