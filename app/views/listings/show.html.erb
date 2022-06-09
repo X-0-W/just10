@@ -22,9 +22,9 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<div class="d-flex justify-content-between">
-  <%= link_to 'Purchase', new_listing_order_path(@listing), class: "btn btn-primary" %>
+<%= render 'order_form', listing: @listing, order: @order %>
 
+<div class="d-flex justify-content-between">
   <div class="btn btn-primary">
     <%= link_to listing_path(@listing) do %>
       <i class="far fa-comment"> seller </i>
@@ -36,7 +36,8 @@
   <p><strong>Other items from this seller:</strong></p>
   <div class="seller-other-cards m-2">
     <% @other_listings_from_same_user.each do |listing| %>
-      <div class="seller-other-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
+      <div class="seller-other-card" style="background-image:
+      linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
       <div class="top-left-icon">
         <%# <i class="fas fa-heart"></i> --> wishlist %>
         <i class="far fa-heart"></i>
