@@ -26,23 +26,11 @@
 
 <%= render 'order_form', listing: @listing, order: @order %>
 
-  <div class="d-flex justify-content-between">
-    <div class="btn btn-primary">
-      <%= link_to listing_path(@listing) do %>
-        <i class="far fa-comment"> seller </i>
-      <% end %>
-
-  <div class="d-flex justify-content-between">
-    <%= link_to 'Purchase', new_listing_order_path(@listing), class: "btn btn-primary" %>
-
-    <div class="btn btn-primary">
-      <%= link_to listing_path(@listing) do %>
-        <i class="far fa-comment"> seller </i>
-      <% end %>
-    </div>
-  </div>
+  <div class="btn btn-primary">
+    <%= link_to listing_path(@listing) do %>
+      <i class="far fa-comment"> seller </i>
+    <% end %>
 </div>
-
 
 <% unless @other_listings_from_same_user.empty? %>
   <div class="container">
