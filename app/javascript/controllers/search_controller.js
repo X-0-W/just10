@@ -17,6 +17,9 @@ export default class extends Controller {
 
   fetchListings() {
     const url = `/listings?address=${this.addressValue}&distance=${this.distanceTarget.value}`
+    this.listTarget.classList.remove("index-cards");
+    this.listTarget.classList.add("loading-results");
+    this.listTarget.innerHTML = `<div class="lds-circle"><div></div></div>`;
     fetch(url, {
       headers: { "Accept": "text/plain" }
     })
