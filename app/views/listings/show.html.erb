@@ -24,6 +24,14 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+<%= render 'order_form', listing: @listing, order: @order %>
+
+  <div class="d-flex justify-content-between">
+    <div class="btn btn-primary">
+      <%= link_to listing_path(@listing) do %>
+        <i class="far fa-comment"> seller </i>
+      <% end %>
+
   <div class="d-flex justify-content-between">
     <%= link_to 'Purchase', new_listing_order_path(@listing), class: "btn btn-primary" %>
 
@@ -33,7 +41,6 @@
       <% end %>
     </div>
   </div>
-
 </div>
 
 
