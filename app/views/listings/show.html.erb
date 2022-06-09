@@ -34,7 +34,7 @@
 
 <% unless @other_listings_from_same_user.empty? %>
   <div class="container">
-    <p><strong>Other items from this seller:</strong></p>
+    <p><strong>Other items from <%= @listing.user.first_name %> :</strong></p>
   </div>
     <div class="seller-other-cards m-2">
       <% @other_listings_from_same_user.each do |listing| %>
