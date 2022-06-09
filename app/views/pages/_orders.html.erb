@@ -1,0 +1,12 @@
+<div class="row flex-nowrap scrollable-cards">
+  <%# for each order, get listing and display listing %>
+  <% orders.each do |order| %>
+    <div class="card ms-3" style="width: 14rem">
+      <div class="card card-block">
+        <%= image_tag order.listing.photo, crop: :fill, size:180 %>
+      </div>
+        <%= order.listing.title %>
+      <p> Status: <%= order.status%></p>
+    </div>
+  <% end %>
+</div>
