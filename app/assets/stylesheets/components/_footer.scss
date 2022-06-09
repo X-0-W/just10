@@ -1,28 +1,32 @@
 .footer {
-  background: #f4f4f4;
+  background: white;
   display: flex;
   align-items: center;
-  height: 60px;
-  padding: 0px 50px;
+  height: 70px;
+  padding: 0px 35px;
   color: rgba(0, 0, 0, 0.3);
-  margin-top: 10px;
   position: fixed;
   bottom: 0;
+  opacity: 0.8;
+  justify-content: space-around;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.8;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   padding: 0px 15px;
   text-align: center;
-
+  margin-top: 5px;
   p {
-    font-size: 12px;
-    margin:5px 0;
+    font-size: 11px;
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif;
   }
 }

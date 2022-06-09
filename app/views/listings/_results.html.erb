@@ -1,0 +1,17 @@
+<div class="index-cards m-2" data-search-target="list">
+  <p class="mb-0" id="listings-counter"><strong><%= @listings.size %></strong> listings</p>
+  <% listings.all.each do |listing| %>
+    <%= link_to listing_path(listing) do %>
+      <%# check if listing has not been completed / accepted %>
+        <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path listing.photo.key %>)">
+          <div class="top-left-icon">
+            <%# <i class="fas fa-heart"></i> --> wishlist %>
+            <i class="far fa-heart"></i>
+          </div>
+          <div class="bottom-right-icon">
+            <p> <%  %> km</p>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>

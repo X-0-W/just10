@@ -7,6 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
@@ -17,4 +19,11 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 70px
 }

@@ -5,6 +5,8 @@ ruby '3.0.3'
 
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+# Gemfile
+gem "geocoder"
 # For cloudinary security
 gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -28,6 +30,8 @@ gem 'redis', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# pg_search gem
+gem 'pg_search', '~> 2.3.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
