@@ -18,6 +18,7 @@ class ListingsController < ApplicationController
       else
         format.html { @listings = Listing.all }
       end
+    end
   end
 
   def new
