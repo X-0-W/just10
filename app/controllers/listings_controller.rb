@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   def index
     respond_to do |format|
       if params[:address].present?
-        @listings = Listing.near(params[:address], params[:distance] ||= 20)
+        @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
         # end
