@@ -5,6 +5,8 @@ ruby '3.0.3'
 
 # Cloudinary
 gem 'cloudinary', '~> 1.16.0'
+# Gemfile
+gem "geocoder"
 # For cloudinary security
 gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

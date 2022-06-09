@@ -13,6 +13,7 @@
             <% end %>
           </div>
         <% end %>
+
       <% end %>
     </div>
     <div class="container">
@@ -27,3 +28,12 @@
       <% end %>
     </div>
 </div>
+
+<%= form_with url: listings_path, method: :get do |f| %>
+  <div class="d-flex">
+    <div data-controller="geocoder" data-geocoder-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <%= f.text_field :address, data: { geocoder_target: "address" }, class: "d-none" %>
+    </div>
+    <%= f.submit 'Enter address', class: "btn btn-primary" %>
+  </div>
+<% end %>

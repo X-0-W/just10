@@ -2,15 +2,22 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
+
+    @markers = [{ lat: @listing.latitude, lng: @listing.longitude }]
   end
 
   def index
-    @listings = Listing.all
-    if params[:query].present?
-      @listings = Listing.where("title ILIKE ?", "%#{params[:query]}")
-    else
-      @listings = Listing.all
-    end
+    respond_to do |format|
+      if params[:address].present?
+        @listings = Listing.near(params[:address], params[:distance] ||= 20)
+        # if params[:query].present?
+          # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
+        # end
+        format.html
+        format.text { render partial: "listings/results", locals: { listings: @listings }, formats: [:html] }
+      else
+        format.html { @listings = Listing.all }
+      end
   end
 
   def new

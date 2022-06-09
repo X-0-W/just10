@@ -5,8 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, :last_name, :address, presence: true
-
-  has_one_attached :photo
   has_many :listings
   has_many :orders
+  
+  has_one_attached :photo
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+  
 end
