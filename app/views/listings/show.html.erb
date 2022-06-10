@@ -24,8 +24,12 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+
 <%= render 'order_form', listing: @listing, order: @order %>
-  
+
+<%= render 'listings/order_form', listing: @listing, order: @order %>
+
+
 <% unless @other_listings_from_same_user.empty? %>
   <div class="container">
     <p><strong>Other items from <%= @listing.user.first_name %> :</strong></p>
