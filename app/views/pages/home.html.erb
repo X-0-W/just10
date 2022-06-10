@@ -13,9 +13,13 @@
             <% end %>
           </div>
         <% end %>
-
       <% end %>
     </div>
+
+    <div class="container">
+  </div>
+</div>
+
     <%# <div class="container">
       <%= form_tag listings_path, method: :get do %>
         <%#= text_field_tag :query,
@@ -29,11 +33,25 @@
     <%# </div> %>
   </div>
 
+
 <%= form_with url: listings_path, method: :get do |f| %>
-  <div class="d-flex">
+  <div class="container">
     <div data-controller="geocoder" data-geocoder-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <%= f.text_field :address, data: { geocoder_target: "address" }, class: "d-none" %>
     </div>
-    <%= f.submit 'Enter address', class: "btn btn-primary" %>
+    <div class="text-center">
+      <%= f.submit 'Enter address', class: "btn custom-btn my-2" %>
+    </div>
   </div>
 <% end %>
+
+
+<%# form_tag listings_path, method: :get do %>
+        <%# text_field_tag :query,
+          params[:query],
+          class: "form-control mt-2",
+          placeholder: "What are you looking for?"%>
+        <%# <div class="d-flex justify-content-center mt-2"> %>
+          <%# submit_tag "Try Now", class: "btn custom-btn" %>
+        <%# </div> %>
+      <%# end %>

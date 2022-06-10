@@ -1,9 +1,10 @@
-<div class="container mb-2">
+
+<div class="container my-3">
     <%= simple_form_for [listing, order] do |f| %>
       <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}} %>
       <div class="d-flex justify-content-between">
         <%= f.submit class: "btn btn-primary half-width", value: "Purchase" %>
-        <div class="btn btn-primary half-width">
+        <div class="btn custom-btn half-width">
           <%= link_to listing_path(@listing) do %>
             <i class="far fa-comment"> seller </i>
           <% end %>
