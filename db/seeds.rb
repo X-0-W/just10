@@ -19,7 +19,7 @@ user_reiko.photo.attach(io: file, filename: "reiko.png", content_type: 'image/pn
 user_reiko.save!
 p "reiko seeded"
 
-user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "141 Johnston St, Fitzroy VIC 3065", phone: "0421123456")
+user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "37 Lusher Rd, Croydon VIC 3136", phone: "0421123456")
 file = URI.open('https://avatars.githubusercontent.com/u/37198517?v=4')
 user_callum.photo.attach(io: file, filename: "callum.png", content_type: 'image/png')
 user_callum.save!
@@ -139,7 +139,7 @@ list14.save!
 p "14 seeded"
 
 # assigns an order to a random user for each listing
-3.times do
+1.times do
   Listing.all.each do |listing|
     # Gets random user
     user = User.all.sample
