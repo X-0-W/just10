@@ -3,10 +3,10 @@
   <%# for each order, get listing and display listing %>
   <% orders.each do |order| %>
     <div class="card ms-3" style="width: 14rem">
+    <%= link_to order_path(order.id) do %>
       <div class="card card-block">
         <%= cl_image_tag order.listing.photo.key %>
       </div>
-      <%= link_to order_path(order.id) do %>
         <%= order.listing.title %>
       <% end %>
       <p> Status: <%= order.status %></p>

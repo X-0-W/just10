@@ -1,12 +1,12 @@
 
-<div class="container my-3">
+<div class="container my-3 text-center">
     <%= simple_form_for [listing, order] do |f| %>
-      <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}} %>
+      <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}}, label: false, placeholder: "Choose your pickup time" %>
       <div class="d-flex justify-content-between">
-        <%= f.submit class: "btn btn-primary half-width", value: "Purchase" %>
-        <div class="btn primary-btn half-width">
+        <%= f.submit class: "btn btn-primary flex-grow-1", value: "Purchase" %>
+        <div class="btn btn-background-transparent">
           <%= link_to listing_path(@listing) do %>
-            <i class="far fa-comment"> seller </i>
+            <i class="far fa-comment"></i>
           <% end %>
         </div>
       </div>
