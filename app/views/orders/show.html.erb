@@ -14,10 +14,24 @@
 
 <div class="container text-center my-2">
   <strong><h3><%= @order.listing.title %></h3></strong>
-  <p> Pick up date: <%= @order.pickup_time %> </p>
+  <p> Pick up date: <%= @order.pickup_time.strftime("%l.%M%P on %A, %-d/%m/%y") %> </p>
   <p> Address: <%= @order.listing.user.address%> </p>
 </div>
 
 <div class="text-center">
-  <button class="btn custom-btn my-2">Complete</button>
+  <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button>
+</div>
+
+<%# Modal %>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <p>Thank you for using Just $10 app  <i class="fas fa-thumbs-up"></i></p>
+        <%= link_to listings_path do %>
+        <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

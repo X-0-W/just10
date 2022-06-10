@@ -108,3 +108,19 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
   flex-grow: 0.5;
   margin: 2px;
 }
+
+
+// Secondary Button
+
+
+.btn-background-transparent {
+  background: transparent;
+  margin-left: 15px;
+  border: 1px solid #b2a9a9;
+  border-radius: 50%;
+  width: 44px;
+
+  i {
+    color: #b2a9a9;
+  }
+}
