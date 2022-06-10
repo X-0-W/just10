@@ -1,4 +1,4 @@
-<div data-controller="search" data-search-address-value="<%= params[:address] %>">
+<div data-controller="search" data-search-address-value="<%= params[:address] %>" class="pt-5">
   <div class="listings-headers d-flex mt-2 mx-2">
     <p> Within: </p>
     <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; width: 42px; text-align: right">
@@ -6,7 +6,7 @@
       <option value="5">5</option>
       <option value="10">10</option>
       <option value="20" selected>20</option>
-      <option value="20">50</option>
+      <option value="50">50</option>
     </select>
   <p> km </p>
   </div>
