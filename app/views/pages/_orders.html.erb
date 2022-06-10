@@ -4,7 +4,7 @@
   <% orders.each do |order| %>
     <div class="card ms-3" style="width: 14rem">
       <div class="card card-block">
-        <%= image_tag order.listing.photo, crop: :fill, size:180 %>
+        <%= cl_image_tag order.listing.photo.key %>
       </div>
       <%= link_to order_path(order.id) do %>
         <%= order.listing.title %>
