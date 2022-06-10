@@ -96,6 +96,26 @@
   }
 }
 
+.order-card {
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+
+  .order-notification {
+
+    .order-user {
+      margin-left: 5px;
+      flex-grow: 1;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 // Callum card
 .scrollable-cards {
   overflow: scroll;

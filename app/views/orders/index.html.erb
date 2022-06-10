@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @listing.photo.key %>)">
+  </div>
+
+  <div class="">
+    <h1> <%= @listing.title.capitalize %> </h1>
+    <p style="text-align: left" > Listed <%= time_ago_in_words(@listing.created_at) %> ago</p>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="order-notifications">
+    <%= @listing.orders.each do | order | %>
+
+      <div class="order-card">
+        <div class="order-notification d-flex">
+          <div class="avatar">
+            <%= cl_image_tag order.user.photo.key, class: "avatar" %>
+          </div>
+          <div class="order-user">
+            <p> <strong> <%= order.user.first_name %> </strong> </p>
+            <p> <%= order.pickup_time.strftime("%l.%M%P on %A, %-d/%m/%y") %> </p>
+          </div>
+          <div class="btn-message">
+            <%= link_to listing_path(@listing) do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="buttons-response d-flex justify-content-between">
+          <div class="btn btn-primary half-width left">
+            <%= link_to accept_order_path(@listing) do %>
+              <i class="fas fa-check"></i>
+            <% end %>
+          </div>
+          <div class="btn btn-primary half-width right">
+            <%= link_to reject_order_path(@listing) do %>
+              <i class="fas fa-times"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

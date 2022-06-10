@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   def index
+    @listing = Listing.find(params[:listing_id])
+
   end
 
   def new
@@ -19,9 +21,11 @@ class OrdersController < ApplicationController
   end
 
   def accept
+
   end
 
   def reject
+
   end
 
   private

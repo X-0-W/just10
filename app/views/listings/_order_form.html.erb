@@ -1,6 +1,13 @@
-<div class="container">
-  <%= simple_form_for [listing, order] do |f| %>
-    <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}} %>
-    <%= f.submit class: "btn btn-primary", value: "Purchase" %>
-  <% end %>
+<div class="container mb-2">
+    <%= simple_form_for [listing, order] do |f| %>
+      <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}} %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit class: "btn btn-primary half-width", value: "Purchase" %>
+        <div class="btn btn-primary half-width">
+          <%= link_to listing_path(@listing) do %>
+            <i class="far fa-comment"> seller </i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 </div>

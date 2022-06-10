@@ -16,18 +16,18 @@
 
       <% end %>
     </div>
-    <div class="container">
+    <%# <div class="container">
       <%= form_tag listings_path, method: :get do %>
-        <%= text_field_tag :query,
+        <%#= text_field_tag :query,
           params[:query],
           class: "form-control mt-2",
           placeholder: "What are you looking for?"%>
-        <div class="d-flex justify-content-center mt-2">
+        <%# <div class="d-flex justify-content-center mt-2">
           <%= submit_tag "Try Now", class: "btn custom-btn" %>
-        </div>
-      <% end %>
-    </div>
-</div>
+        <%# </div> %>
+      <%# <% end %>
+    <%# </div> %>
+  </div>
 
 <%= form_with url: listings_path, method: :get do |f| %>
   <div class="d-flex">

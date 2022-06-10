@@ -13,10 +13,30 @@ Order.destroy_all
 Listing.destroy_all
 User.destroy_all
 
-User.create!(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road Officer", phone: "0420123456")
-User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "Inspire 9, 43 Stewart Street, Richmond", phone: "0421123456")
-User.create!(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Something", address: "156, Badger Weir Road, Badger Creek, 3777", phone: "0422123456")
-User.create!(email: "ethan@gmail.com", password: "testing", first_name: "Ethan", last_name: "Li", address: "Inspire 9, 43 Stewart Street, Richmond", phone: "0423123456")
+user_reiko = User.create!(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road, Officer, Vic 3809", phone: "0420123456")
+file = URI.open('https://avatars.githubusercontent.com/u/97565823?v=4')
+user_reiko.photo.attach(io: file, filename: "reiko.png", content_type: 'image/png')
+user_reiko.save!
+p "reiko seeded"
+
+user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "141 Johnston St, Fitzroy VIC 3065", phone: "0421123456")
+file = URI.open('https://avatars.githubusercontent.com/u/37198517?v=4')
+user_callum.photo.attach(io: file, filename: "callum.png", content_type: 'image/png')
+user_callum.save!
+p "callum seeded"
+
+user_xander = User.create!(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Wellingham", address: "38 Garnet Street, Brunswick, Vic 3056", phone: "0422123456")
+file = URI.open('https://avatars.githubusercontent.com/u/77281250?v=4')
+user_xander.photo.attach(io: file, filename: "xander.png", content_type: 'image/png')
+user_xander.save!
+p "xander seeded"
+
+user_ethan = User.create!(email: "ethan@gmail.com", password: "testing", first_name: "Ethan", last_name: "Li", address: "43 Stewart St, Richmond VIC 3121", phone: "0423123456")
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649669430/lineqcef3quii49ewg5j.jpg')
+user_ethan.photo.attach(io: file, filename: "ethan.jpg", content_type: 'image/jpg')
+user_ethan.save!
+p "ethan seeded"
+
 
 users = User.all
 
