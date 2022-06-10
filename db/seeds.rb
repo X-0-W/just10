@@ -19,7 +19,7 @@ user_reiko.photo.attach(io: file, filename: "reiko.png", content_type: 'image/pn
 user_reiko.save!
 p "reiko seeded"
 
-user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "37 Lusher Rd, Croydon VIC 3136", phone: "0421123456")
+user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "37 Lusher Rd, Croydon, VIC 3136", phone: "0421123456")
 file = URI.open('https://avatars.githubusercontent.com/u/37198517?v=4')
 user_callum.photo.attach(io: file, filename: "callum.png", content_type: 'image/png')
 user_callum.save!
