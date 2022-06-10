@@ -2,13 +2,15 @@
   <%# for each order, get listing and display listing %>
   <% listings.each do |listing| %>
     <div class="card ms-3" style="width: 14rem">
-      <div class="card card-block">
-        <%= image_tag listing.photo, crop: :fill, size:180 %>
-      </div>
-      <div>
-        <%= listing.title %>
-        <p> Pending order requests: <br><%= listing.orders.count %> </p>
-      </div>
+      <%= link_to listing_orders_path(listing) do %>
+        <div class="card card-block">
+          <%= cl_image_tag listing.photo, crop: :fill, size:180 %>
+        </div>
+        <div>
+          <%= listing.title %>
+          <p> Pending order requests: <br><%= listing.orders.count %> </p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

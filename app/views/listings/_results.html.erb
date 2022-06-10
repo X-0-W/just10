@@ -4,7 +4,7 @@
     <% listing_coordinates = [listing.latitude, listing.longitude] %>
     <% search_coordinates = Geocoder.coordinates(params[:address]) %>
     <% distance = Geocoder::Calculations.distance_between(listing_coordinates, search_coordinates) %>
-    <%= link_to listing_path(listing, distance: distance) do %>
+    <%= link_to listing_path(listing) do %>
       <%# check if listing has not been completed / accepted %>
         <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path listing.photo.key %>)">
           <div class="top-left-icon">
