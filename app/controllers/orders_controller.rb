@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   def index
     @listing = Listing.find(params[:listing_id])
+    # if @listing.orders.find_by(status: "accepted")
+    #   @orders = @listing.orders.find_by(status: "accepted")
+    # else
+    #   @orders = Order.where(listing: @listing)
+    # end
   end
 
   def show
@@ -29,11 +34,20 @@ class OrdersController < ApplicationController
   end
 
   def accept
-
+    @order = Order.find(params[:id])
+    @order.accepted!
+    @order.save
+    redirect_to dashboard_path
   end
 
   def reject
-
+    @order = Order.find(params[:id])
+    @order.declined!
+    @order.save
+    respond_to do |format|
+      format.html { redirect_to listing_orders_path(@order.listing) }
+      format.text { render partial: "offers", locals: { listing: @order.listing }, formats: [:html] }
+    end
   end
 
   private

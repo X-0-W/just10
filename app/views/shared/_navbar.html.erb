@@ -9,7 +9,11 @@
       </div>
     </div>
     <div class="navbar-welcome">
-      <%# <%= "Welcome back #{current_user.first_name}"%>
+      <% if user_signed_in? %>
+        <%= "Welcome back #{current_user.first_name}"%>
+      <% else %>
+        <%= "Welcome!" %>
+      <% end %>
     </div>
     <%= image_tag "navbar_dropdown.png", size: 40 %>
     <%# <div class = "nav-item navbar-logo">
