@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   def index
     @listing = Listing.find(params[:listing_id])
-    raise
   end
 
   def show

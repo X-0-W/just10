@@ -4,7 +4,7 @@
     <div class="card ms-3" style="width: 14rem">
       <%= link_to listing_orders_path(listing) do %>
         <div class="card card-block">
-          <%= cl_image_tag listing.photo, crop: :fill, size:180 %>
+          <%= cl_image_tag listing.photo.key %>
         </div>
         <div>
           <%= listing.title %>
