@@ -1,2 +1,23 @@
-<p> Pick up date: <%= order.pickup_time%> </p>
-<p> Address: <%= order.listing.user.address%> </p>
+
+<br>
+<br>
+<div class="container">
+  <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @order.listing.photo.key %>)">
+    <div class="top-left-icon">
+      <%# <i class="fas fa-heart"></i> --> wishlist %>
+      <i class="far fa-heart"></i>
+    </div>
+    <div class="bottom-right-icon">
+      <p> <%= params[:distance].to_f.round(1) %> km</p>
+    </div>
+  </div>
+
+<div class="container text-center my-2">
+  <strong><h3><%= @order.listing.title %></h3></strong>
+  <p> Pick up date: <%= @order.pickup_time %> </p>
+  <p> Address: <%= @order.listing.user.address%> </p>
+</div>
+
+<div class="text-center">
+  <button class="btn custom-btn my-2">Complete</button>
+</div>

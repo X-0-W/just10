@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     # display all of the users current buy order
     @orders = current_user.orders
     @listings = current_user.listings
+    # @order = Order.find(order.id)
   end
 
 end

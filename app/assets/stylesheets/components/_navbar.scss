@@ -2,10 +2,10 @@
   justify-content: space-between;
   background: white;
   z-index: 1;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,10 +16,10 @@
   width: 40px;
 }
 .navbar-dropdown img {
-  width: 40px;
+  width: 35px;
 }
-.dropdown-menu  {
-  left: 10px
+.dropdown-menu {
+  left: 10px;
 }
 
 .dropdown-menu-end[data-bs-popper] {
@@ -46,4 +46,9 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.navbar-welcome {
+  font-size: 23px;
+  font-weight: 500;
 }

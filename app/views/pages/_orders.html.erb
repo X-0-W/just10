@@ -1,3 +1,4 @@
+
 <div class="row flex-nowrap scrollable-cards">
   <%# for each order, get listing and display listing %>
   <% orders.each do |order| %>
@@ -5,8 +6,10 @@
       <div class="card card-block">
         <%= image_tag order.listing.photo, crop: :fill, size:180 %>
       </div>
+      <%= link_to order_path(order.id) do %>
         <%= order.listing.title %>
-      <p> Status: <%= order.status%></p>
+      <% end %>
+      <p> Status: <%= order.status %></p>
     </div>
   <% end %>
 </div>

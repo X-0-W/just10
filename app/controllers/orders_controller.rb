@@ -2,6 +2,13 @@ class OrdersController < ApplicationController
   def index
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @listing = Listing.new
+    # @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
+    @markers = [{ lat: @listing.latitude, lng: @listing.longitude }]
+  end
+
   def new
     @order = Order.new
   end

@@ -26,11 +26,7 @@
 
 <%= render 'order_form', listing: @listing, order: @order %>
 
-  <div class="btn btn-primary">
-    <%= link_to listing_path(@listing) do %>
-      <i class="far fa-comment"> seller </i>
-    <% end %>
-</div>
+
 
 <% unless @other_listings_from_same_user.empty? %>
   <div class="container">
