@@ -1,0 +1,34 @@
+<div class="order-notifications" data-controller="offers" data-offers-target="offers">
+    <% if listing.orders.pending.empty? && listing.orders.accepted.empty? %>
+      <h1>No current offers</h1>
+    <% else %>
+      <% listing.orders.each do | order | %>
+        <% unless order.declined? %>
+          <div class="order-card">
+            <div class="order-notification d-flex">
+              <div class="avatar">
+                <%= cl_image_tag order.user.photo.key, class: "avatar" %>
+              </div>
+              <div class="order-user">
+                <p> <strong> <%= order.user.first_name %> </strong> </p>
+                <p> <%= order.pickup_time.strftime("%l.%M%P on %A, %-d/%m/%y") %> </p>
+              </div>
+              <div class="btn-message">
+                <%= link_to listing_path(listing) do %>
+                  <i class="far fa-comment"></i>
+                <% end %>
+              </div>
+            </div>
+            <div class="buttons-response d-flex justify-content-between">
+              <%= link_to accept_order_path(order), method: :patch, class: "btn btn-primary half-width left" do %>
+                <i class="fas fa-check"></i>
+              <% end %>
+              <%= link_to reject_order_path(order), class: "btn btn-primary half-width right", data: { offers_target: "button", action: "click->offers#rejectOffer" } do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>

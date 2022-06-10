@@ -16,5 +16,4 @@ class Listing < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end
