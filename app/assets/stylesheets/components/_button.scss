@@ -93,3 +93,18 @@ background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 
 .btn span:hover:after {
   width: 100%;
 }
+
+.btn-message {
+  width: 30px;
+  text-align: center;
+}
+
+.buttons-response {
+  height: 35px;
+
+}
+
+.half-width {
+  flex-grow: 0.5;
+  margin: 2px;
+}

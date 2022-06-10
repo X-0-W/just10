@@ -1,16 +1,13 @@
 <div data-controller="search" data-search-address-value="<%= params[:address] %>">
   <div class="listings-headers d-flex mt-2 mx-2">
-    <p> Distance: </p>
-    <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content;
-  width: 42px; text-align: right">
-      <% 20.times do |i| %>
-        <% if i < 20 %>
-          <option value="<%= i + 1 %>"><%= i + 1 %></option>
-        <% else %>
-          <option value="<%= i + 1 %>" selected><%= i + 1 %></option>
-        <% end %>
-      <% end %>
-  </select>
+    <p> Within: </p>
+    <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; width: 42px; text-align: right">
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20" selected>20</option>
+      <option value="20">50</option>
+    </select>
   <p> km </p>
   </div>
   <%# <p>sort by: </p> %>
