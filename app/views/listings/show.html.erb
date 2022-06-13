@@ -26,7 +26,7 @@
     <div class="d-flex justify-content-center">
       <div class="listing-user" style="font-style: italic">
         <p> Listed <%= time_ago_in_words(@listing.created_at) %> ago </p>
-        <% if @listing.user.reviews.size.zero? %>
+        <% if @listing.user.seller_reviews.size.zero? %>
           <p class="ml-2 "> <%= @listing.user.first_name %> has no completed sales </p>
         <% else %>
           <p class="ml-2"> <%= @listing.user.first_name %>'s approval rating is <%= @listing.user.score %>%</p>
