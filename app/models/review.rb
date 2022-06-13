@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :order
-  validates :approval, presence: true
+  has_one :listing, through: :order
+  has_one :user, through: :listing
 end
