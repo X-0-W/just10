@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :listings, except: [:destroy] do
     resources :orders, only: [:index, :new, :create]
+    patch :favorite, on: :member
   end
   resources :chatrooms, only: [:show]
   resources :orders, only: [:index] do

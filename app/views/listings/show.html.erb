@@ -1,12 +1,19 @@
 <br>
 <br>
 
-<div class="container text-center">
+<div class="container text-center py-5">
   <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @listing.photo.key %>)">
 
-    <div class="top-left-icon">
-      <%# <i class="fas fa-heart"></i> --> wishlist %>
-      <i class="far fa-heart"></i>
+    <div class="top-left-icon" data-controller="favorite">
+      <% if current_user.favorited?(@listing) %>
+        <%= link_to favorite_listing_path(@listing, value: false), method: :patch do %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_listing_path(@listing, value: true), method: :patch do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="bottom-right-icon">
       <p> <%= params[:distance].to_f.round(1) %> km</p>

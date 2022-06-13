@@ -14,6 +14,11 @@ class ListingsController < ApplicationController
     end
   end
 
+  def favorite
+    @listing = Listing.find(params[:id])
+    params[:value] == "true" ? current_user.favorite(@listing) : current_user.unfavorite(@listing)
+    redirect_to @listing
+  end
   def show
     @order = Order.new
     @listing = Listing.find(params[:id])
