@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   get '/tagged', to: "listings#tagged", as: :tagged
+  get '/dashboard/my_orders', to: 'pages#my_orders', as: 'my_orders'
+  get '/dashboard/my_listings', to: 'pages#my_listings', as: 'my_listings'
+
   resources :listings, except: [:destroy] do
     resources :orders, only: [:index, :new, :create]
   end
