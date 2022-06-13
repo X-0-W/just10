@@ -11,4 +11,11 @@ class PagesController < ApplicationController
     # @order = Order.find(order.id)
   end
 
+  def my_listings
+    @listings = current.listings
+  end
+
+  def my_orders
+    @orders = current_user.orders
+  end
 end
