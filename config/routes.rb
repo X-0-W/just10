@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/tagged', to: "listings#tagged", as: :tagged
   resources :listings, except: [:destroy] do
     resources :orders, only: [:index, :new, :create]
   end

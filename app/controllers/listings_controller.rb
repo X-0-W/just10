@@ -29,7 +29,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user = current_user
     if @listing.save
-      redirect_to listing_path(@listing)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -49,9 +49,17 @@ class ListingsController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @listings = Listing.tagged_with(params[:tag])
+    else
+      @listings = Listing.all
+    end
+  end
+
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :collection_instruction, photos: [])
+    params.require(:listing).permit(:title, :collection_instruction, :tag_list, :photo, :address)
   end
 end
