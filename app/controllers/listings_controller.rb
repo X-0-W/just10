@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-
   def index
     respond_to do |format|
       if params[:address].present?
