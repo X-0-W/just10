@@ -1,6 +1,6 @@
 
 <div class="container text-center">
-  <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<% cl_image_path @listing.photo.key %>)">
+  <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @listing.photo.key %>)">
 
     <div class="top-left-icon">
       <%# <i class="fas fa-heart"></i> --> wishlist %>
@@ -35,7 +35,7 @@
     <div class="seller-other-cards m-2">
       <% @other_listings_from_same_user.each do |listing| %>
         <%= link_to listing_path(listing) do %>
-          <div class="seller-other-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<% cl_image_path listing.photo.key %>)">
+          <div class="seller-other-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
             <div class="top-left-icon">
               <%# <i class="fas fa-heart"></i> --> wishlist %>
               <i class="far fa-heart"></i>
