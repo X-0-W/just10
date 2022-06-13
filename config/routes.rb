@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :listings, except: [:destroy] do
     resources :orders, only: [:index, :new, :create]
+    patch :favorite, on: :member
   end
   resources :chatrooms, only: [:show]
   resources :orders, only: [:index] do
