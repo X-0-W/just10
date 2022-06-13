@@ -3,7 +3,7 @@
     <h1>Edit the listing - <%= @listing.title %></h1>
     <%= simple_form_for @listing do |f| %>
       <%= f.input :title %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :collection_instruction %>
       <div class="d-grid gap-2">
         <%= f.submit "Update the listing" %>

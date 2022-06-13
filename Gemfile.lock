@@ -70,6 +70,8 @@ GEM
       zeitwerk (~> 2.3)
     acts_as_favoritor (6.0.0)
       activerecord (>= 5.0)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.2.5.0)
@@ -281,6 +283,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_favoritor
+  acts-as-taggable-on (~> 9.0)
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.4)
   byebug

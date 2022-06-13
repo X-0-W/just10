@@ -7,6 +7,7 @@ class Listing < ApplicationRecord
   validates :collection_instruction, length: { maximum: 500 }
 
   has_one_attached :photo
+  acts_as_taggable_on :tags
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

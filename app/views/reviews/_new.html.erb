@@ -1,0 +1,11 @@
+<div class="voting d-flex justify-content-center">
+
+  <%= link_to order_reviews_path(@order, approval: true), method: :post do %>
+    <h1 class="m-3 text-success"> <i class="fas fa-thumbs-up"></i> </h1>
+  <% end %>
+
+  <%= link_to order_reviews_path(@order, approval: false), method: :post do %>
+  <h1 class="m-3 text-danger"> <i class="fas fa-thumbs-down"></i> </h1>
+  <% end %>
+
+</div>

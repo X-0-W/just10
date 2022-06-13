@@ -27,10 +27,17 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body text-center">
-        <p>Thank you for using Just $10 app  <i class="fas fa-thumbs-up"></i></p>
-        <%= link_to dashboard_path do %>
-        <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+        <p class="mb-2">Thank you for using Just $10</p>
+
+        <% if @order.review.present? %>
+          <%= link_to dashboard_path do %>
+            <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+          <% end %>
+        <% else %>
+          <p>Would you purchase from <%= @order.listing.user.first_name %> again? </p>
+          <%= render 'reviews/new' %>
         <% end %>
+
       </div>
     </div>
   </div>
