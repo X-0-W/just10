@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :chatrooms, only: [:show]
   resources :orders, only: [:index] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
   resources :orders, only: [:show] do
     member do
