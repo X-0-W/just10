@@ -2,7 +2,7 @@ class Listing < ApplicationRecord
   belongs_to :user
   has_many :orders
 
-  validates :title, :user_id, :collection_instruction, presence: true
+  validates :title, :user_id, :collection_instruction, :photo, :address, presence: true
   validates :collection_instruction, length: { maximum: 500 }
 
   has_one_attached :photo
