@@ -19,6 +19,9 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
     @markers = [{ lat: @listing.latitude, lng: @listing.longitude }]
+    # @chatroom = Chatroom.joins(chatroom_users: :user).where(user:{id: current_user.id})
+    @chatroom = Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: current_user.id})
+                        .merge(Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: @listing.user.id})).first
   end
 
   def new

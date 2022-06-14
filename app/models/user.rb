@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :listings, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end
