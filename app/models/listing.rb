@@ -6,6 +6,8 @@ class Listing < ApplicationRecord
   validates :title, :user_id, :collection_instruction, presence: true
   validates :collection_instruction, length: { maximum: 500 }
 
+  scope :active, -> { Listing.includes(:orders).where.not(orders: { status: :completed }) }
+
   has_one_attached :photo
   acts_as_taggable_on :tags
 

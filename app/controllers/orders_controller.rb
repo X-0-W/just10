@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @listing = Listing.new
+    @listing = @order.listing
     # @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
     @markers = [{ lat: @listing.latitude, lng: @listing.longitude }]
   end
@@ -47,6 +47,16 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to listing_orders_path(@order.listing) }
       format.text { render partial: "offers", locals: { listing: @order.listing }, formats: [:html] }
+    end
+  end
+
+  def complete
+    @order = Order.find(params[:id])
+    @order.completed!
+    @order.save
+    respond_to do |format|
+      format.html { redirect_to orders_path(@order) }
+      format.js
     end
   end
 

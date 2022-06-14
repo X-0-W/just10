@@ -1,6 +1,6 @@
 <div class="index-cards m-2" data-search-target="list">
-  <p class="mb-0" id="listings-counter"><strong><%= @listings.size %></strong> listings</p>
-  <% listings.all.each do |listing| %>
+  <p class="mb-0" id="listings-counter"><strong><%= @listings.active.size %></strong> listings</p>
+  <% listings.active.each do |listing| %>
     <% listing_coordinates = [listing.latitude, listing.longitude] %>
     <% search_coordinates = Geocoder.coordinates(params[:address]) %>
     <% distance = Geocoder::Calculations.distance_between(listing_coordinates, search_coordinates) %>

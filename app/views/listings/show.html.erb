@@ -16,7 +16,7 @@
       <% end %>
     </div>
     <div class="bottom-right-icon">
-      <p> <%= params[:distance].to_f.round(1) %> km</p>
+      <p> <%= @listing.distance_to(session[:last_coordinates]).to_f.round(1) %> km</p>
     </div>
   </div>
 
