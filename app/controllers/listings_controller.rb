@@ -2,7 +2,11 @@ class ListingsController < ApplicationController
   def index
     respond_to do |format|
       if params[:address].present?
-        @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
+        # 3 rows below moved in place of commented line, following tagging merge
+        first_result = Geocoder.search(params[:address]).first
+        session[:last_coordinates] = [first_result.latitude, first_result.longitude]
+        @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
+        # @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
       end
       if params[:tag_list].present?
         @listings = Listing.tagged_with(params[:tag_list], any: true)
@@ -16,11 +20,20 @@ class ListingsController < ApplicationController
     end
   end
 
+  def favorite
+    @listing = Listing.find(params[:id])
+    params[:value] == "true" ? current_user.favorite(@listing) : current_user.unfavorite(@listing)
+    redirect_to @listing
+  end
+
   def show
     @order = Order.new
     @listing = Listing.find(params[:id])
     @other_listings_from_same_user = @listing.user.listings.where.not(id: @listing.id)
     @markers = [{ lat: @listing.latitude, lng: @listing.longitude }]
+    # @chatroom = Chatroom.joins(chatroom_users: :user).where(user:{id: current_user.id})
+    @chatroom = Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: current_user.id})
+                        .merge(Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: @listing.user.id})).first
   end
 
   def new

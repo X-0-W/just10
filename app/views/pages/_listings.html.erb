@@ -8,7 +8,7 @@
         </div>
         <div>
           <%= listing.title %>
-          <p> Pending order requests: <%= listing.orders.count %> </p>
+          <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
         </div>
       <% end %>
       <div class="me-3"></div>

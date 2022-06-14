@@ -1,18 +1,21 @@
 <div class="index-cards m-2" data-search-target="list">
   <p class="mb-0" id="listings-counter"><strong><%= listings.size %></strong> listings</p>
-  <% listings.all.each do |listing| %>
-    <% listing_coordinates = [listing.latitude, listing.longitude] %>
-    <% search_coordinates = Geocoder.coordinates(params[:address]) %>
-    <% distance = Geocoder::Calculations.distance_between(listing_coordinates, search_coordinates) %>
-    <%= link_to listing_path(listing, distance: distance) do %>
-      <%# check if listing has not been completed / accepted %>
+
+  <% listings.each do |listing| %>
+    <%# <% listing_coordinates = [listing.latitude, listing.longitude] %>
+    <%# <% search_coordinates = Geocoder.coordinates(params[:address]) %>
+    <%# <% distance = Geocoder::Calculations.distance_between(listing_coordinates, session[:last_coordinates]) %>
+    <%= link_to listing_path(listing) do %>
         <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path listing.photo.key %>)">
           <div class="top-left-icon">
-            <%# <i class="fas fa-heart"></i> --> wishlist %>
-            <i class="far fa-heart"></i>
+            <% if current_user.favorited?(listing) %>
+              <i class="fas fa-heart"></i>
+            <% else %>
+              <i class="far fa-heart"></i>
+            <% end %>
           </div>
           <div class="bottom-right-icon">
-            <p> <%= distance.round(1) %> km</p>
+            <p> <%= listing.distance_to(session[:last_coordinates]).round(1) %> km</p>
           </div>
         </div>
     <% end %>

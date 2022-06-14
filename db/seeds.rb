@@ -11,6 +11,7 @@ require 'open-uri'
 Review.destroy_all
 Order.destroy_all
 Listing.destroy_all
+Message.destroy_all
 User.destroy_all
 
 user_reiko = User.create!(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road, Officer, Vic 3809", phone: "0420123456")
@@ -152,4 +153,23 @@ p "14 seeded"
 end
 
 p "Orders seeded"
+
+file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
+list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", user: user_ethan, address: user_ethan.address)
+list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
+list15.save!
+
+Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
+Review.create(order: Order.last, approval: true)
+p "Review seeded"
+
+file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
+list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", user: user_xander, address: user_xander.address)
+list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
+list15.save!
+
+Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
+Review.create(order: Order.last, approval: false)
+p "Review seeded"
+
 p "seed completed"

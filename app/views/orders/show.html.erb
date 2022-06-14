@@ -1,6 +1,4 @@
 
-<br>
-<br>
 <div class="container">
   <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @order.listing.photo.key %>)">
     <div class="top-left-icon">
@@ -14,23 +12,39 @@
 
 <div class="container text-center my-2">
   <strong><h3><%= @order.listing.title %></h3></strong>
+  <%# <div class="text-center">
+    <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button>
+  </div> %>
+  <%= link_to "Complete", complete_order_path(@order), class:"btn custom-btn my-2", method: :patch, remote: true %>
   <p> Pick up date: <%= @order.pickup_time.strftime("%l.%M%P on %A, %-d/%m/%y") %> </p>
   <p> Address: <%= @order.listing.user.address%> </p>
 </div>
 
 <div class="text-center">
-  <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button>
+  <div style="width: 100%; height: 228px;" class="my-3"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
+<%# <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button> %>
 
 <%# Modal %>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body text-center">
-        <p>Thank you for using Just $10 app  <i class="fas fa-thumbs-up"></i></p>
-        <%= link_to dashboard_path do %>
-        <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+        <p class="mb-2">Thank you for using Just $10</p>
+
+        <% if @order.review.present? %>
+          <%= link_to dashboard_path do %>
+            <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+          <% end %>
+        <% else %>
+          <p>Would you purchase from <%= @order.listing.user.first_name %> again? </p>
+          <%= render 'reviews/new' %>
         <% end %>
+
       </div>
     </div>
   </div>
