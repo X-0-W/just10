@@ -1,6 +1,4 @@
 
-<br>
-<br>
 <div class="container">
   <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @order.listing.photo.key %>)">
     <div class="top-left-icon">
@@ -19,8 +17,11 @@
 </div>
 
 <div class="text-center">
-  <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button>
+  <%= form_with(model: @order) do |f| %>
+    <%= f.button :submit %>
+  <% end %>
 </div>
+<%# <button type="button" class="btn custom-btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Complete</button> %>
 
 <%# Modal %>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -29,7 +30,7 @@
       <div class="modal-body text-center">
         <p>Thank you for using Just $10 app  <i class="fas fa-thumbs-up"></i></p>
         <%= link_to dashboard_path do %>
-        <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
+          <button type="button" class="btn custom-btn" data-dismiss="modal">Go back</button>
         <% end %>
       </div>
     </div>

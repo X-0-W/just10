@@ -2,11 +2,13 @@
   background-color: black;
 }
 .messages {
-  overflow: auto;
+  overflow: scroll;
+  height: 90vh;
 }
 .chatroom-form {
   position: sticky;
-  bottom: 70px;
+  bottom: 55px;
+  margin-bottom: -28px;
 }
 .message-send-btn {
   background: radial-gradient(circle, #f796c0 0%, #76aef1 100%);
