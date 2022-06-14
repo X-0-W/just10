@@ -1,8 +1,19 @@
-<div class="container text-center">
+<br>
+<br>
+
+<div class="container text-center py-5">
   <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @listing.photo.key %>)">
-    <div class="top-left-icon">
-      <%# <i class="fas fa-heart"></i> --> wishlist %>
-      <i class="far fa-heart"></i>
+
+    <div class="top-left-icon" data-controller="favorite">
+      <% if current_user.favorited?(@listing) %>
+        <%= link_to favorite_listing_path(@listing, value: false), method: :patch do %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_listing_path(@listing, value: true), method: :patch do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="bottom-right-icon">
       <p> <%= params[:distance].to_f.round(1) %> km</p>
@@ -10,9 +21,19 @@
   </div>
 
 
-  <div class="">
+  <div class="mb-5 pb-5 border-bottom">
     <h1> <%= @listing.title.capitalize %> </h1>
-    <p style="font-style: italic" class="mb-5 pb-5 border-bottom"> Listed <%= time_ago_in_words(@listing.created_at) %> ago</p>
+    <div class="d-flex justify-content-center">
+      <div class="listing-user" style="font-style: italic">
+        <p> Listed <%= time_ago_in_words(@listing.created_at) %> ago </p>
+        <% if @listing.user.seller_reviews.size.zero? %>
+          <p class="ml-2 "> <%= @listing.user.first_name %> has no completed sales </p>
+        <% else %>
+          <p class="ml-2"> <%= @listing.user.first_name %>'s approval rating is <%= @listing.user.score %>%</p>
+        <% end %>
+      </div>
+      <%#= cl_image_tag @listing.user.photo.key, class: "avatar" %>
+    </div>
   </div>
 
   <h3 class="text-center"> Collection Instruction </h3>
@@ -28,7 +49,7 @@
 
 <% unless @other_listings_from_same_user.empty? %>
   <div class="container">
-    <p><strong>Other items from <%= @listing.user.first_name %> :</strong></p>
+    <p><strong>Other items from <%= @listing.user.first_name %></strong></p>
   </div>
     <div class="seller-other-cards m-2">
       <% @other_listings_from_same_user.each do |listing| %>

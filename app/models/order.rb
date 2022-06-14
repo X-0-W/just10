@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   belongs_to :listing
+  has_one :review, dependent: :destroy
 
   validates :pickup_time, :status, presence: true
   # validates :status, numericality: { only_integer: true }

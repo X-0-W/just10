@@ -8,8 +8,11 @@
       <%# check if listing has not been completed / accepted %>
         <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path listing.photo.key %>)">
           <div class="top-left-icon">
-            <%# <i class="fas fa-heart"></i> --> wishlist %>
-            <i class="far fa-heart"></i>
+            <% if current_user.favorited?(listing) %>
+              <i class="fas fa-heart"></i>
+            <% else %>
+              <i class="far fa-heart"></i>
+            <% end %>
           </div>
           <div class="bottom-right-icon">
             <p> <%= distance.round(1) %> km</p>
