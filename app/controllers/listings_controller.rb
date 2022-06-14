@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
       if params[:address].present?
         first_result = Geocoder.search(params[:address]).first
         session[:last_coordinates] = [first_result.latitude, first_result.longitude]
-        @listings = Listing.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
+        @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
         # end
