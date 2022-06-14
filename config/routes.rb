@@ -23,13 +23,7 @@ Rails.application.routes.draw do
     member do
       patch :accept
       patch :reject
+      patch :complete
     end
   end
 end
-
-# row 9-15 to below row 6
-# add resources: orders, only: [:show] - not nested. Benefit vs nesting?
-
-# patch '/orders/:id/accept', to: 'orders#accept', as :accept
-# /orders/:id/accept
-# /orders/:id/reject

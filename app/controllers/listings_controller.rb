@@ -2,7 +2,9 @@ class ListingsController < ApplicationController
   def index
     respond_to do |format|
       if params[:address].present?
-        @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
+        first_result = Geocoder.search(params[:address]).first
+        session[:last_coordinates] = [first_result.latitude, first_result.longitude]
+        @listings = Listing.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
         # end
@@ -19,6 +21,7 @@ class ListingsController < ApplicationController
     params[:value] == "true" ? current_user.favorite(@listing) : current_user.unfavorite(@listing)
     redirect_to @listing
   end
+
   def show
     @order = Order.new
     @listing = Listing.find(params[:id])
