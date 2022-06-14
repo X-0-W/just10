@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  TAGS = ["Toy", "Decoration", "Fashion"]
+  TAGS = ["Toy", "Decoration", "Fashion", "Miscellaneous", "Exercise", "Furniture"]
   belongs_to :user
   has_many :orders
 
