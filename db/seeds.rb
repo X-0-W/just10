@@ -11,6 +11,7 @@ require 'open-uri'
 Review.destroy_all
 Order.destroy_all
 Listing.destroy_all
+Message.destroy_all
 User.destroy_all
 
 user_reiko = User.create!(email: "reiko@gmail.com", password: "testing", first_name: "Reiko", last_name: "Ochiai", address: "17 Rix Road, Officer, Vic 3809", phone: "0420123456")
