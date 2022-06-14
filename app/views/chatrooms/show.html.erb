@@ -1,18 +1,13 @@
 <div class="container chatroom" data-controller="chatroom-subscription"
 data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>#<%= @chatroom.id %></h1>
-
+  <div><h2><%= @chatroom.users.first.first_name %> - <%= @chatroom.users.second.first_name %>chatroom</h2></div>
   <div class="messages" data-chatroom-subscription-target="messages">
-    <%= @chatroom.id  %>
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-        <%= render "messages/message", message: message %>
-      <% end %>
-    </div>
-
-    <%# Simple form creates a post request with an empty instance of message %>
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
   </div>
-  <br>
+    <%# useless comment %>
+    <%# Simple form creates a post request with an empty instance of message %>
   <%= simple_form_for [@chatroom, @message],
     remote: true,
     html: {data: {action: "ajax:success->chatroom-subscription#resetForm"}, class: "d-flex chatroom-form" } do |f|
