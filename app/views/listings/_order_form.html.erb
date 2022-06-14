@@ -8,7 +8,7 @@
     <% end %>
     <div class="btn btn-background-transparent">
       <% if @chatroom.nil? %>
-        <%= link_to "Create new chat", chatrooms_path(current_user, recipient_id: listing.user.id), method: :post %>
+        <%= link_to "Create new chat", chatroom_path(current_user, recipient_id: listing.user.id), method: :post %>
         <i class="far fa-comment"></i>
       <% else %>
         <%= link_to chatroom_path(@chatroom) do %>
