@@ -1,13 +1,13 @@
 class ListingsController < ApplicationController
   def index
-    if params[:address].present?
-      first_result = Geocoder.search(params[:address]).first
-      session[:last_coordinates] = [first_result.latitude, first_result.longitude]
-      @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
-      # if params[:query].present?
-      # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
-      # end
-      respond_to do |format|
+    respond_to do |format|
+      if params[:address].present?
+        first_result = Geocoder.search(params[:address]).first
+        session[:last_coordinates] = [first_result.latitude, first_result.longitude]
+        @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
+        # if params[:query].present?
+        # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
+        # end
         format.html
         format.text { render partial: "listings/results", locals: { listings: @listings }, formats: [:html] }
       else
