@@ -1,9 +1,10 @@
 class Listing < ApplicationRecord
+  TAGS = ["Toy", "Decoration", "Fashion", "Miscellaneous", "Exercise", "Furniture"]
   acts_as_favoritable
   belongs_to :user
   has_many :orders
 
-  validates :title, :user_id, :collection_instruction, presence: true
+  validates :title, :user_id, :collection_instruction, :photo, :address, presence: true
   validates :collection_instruction, length: { maximum: 500 }
 
   scope :active, -> { Listing.includes(:orders).where.not(orders: { status: :completed }) }

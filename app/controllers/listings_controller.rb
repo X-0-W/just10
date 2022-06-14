@@ -2,17 +2,21 @@ class ListingsController < ApplicationController
   def index
     respond_to do |format|
       if params[:address].present?
+        # 3 rows below moved in place of commented line, following tagging merge
         first_result = Geocoder.search(params[:address]).first
         session[:last_coordinates] = [first_result.latitude, first_result.longitude]
         @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
+        # @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
+      end
+      if params[:tag_list].present?
+        @listings = Listing.tagged_with(params[:tag_list], any: true)
+      end
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
         # end
         format.html
         format.text { render partial: "listings/results", locals: { listings: @listings }, formats: [:html] }
-      else
-        format.html { @listings = Listing.all }
-      end
+        # format.html { @listings = Listing.all }
     end
   end
 

@@ -1,15 +1,53 @@
-<div data-controller="search" data-search-address-value="<%= params[:address] %>">
-  <div class="listings-headers d-flex mx-2">
-    <p> Within: </p>
-    <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; width: 42px; text-align: right">
-      <option value="1">1</option>
-      <option value="5">5</option>
-      <option value="10">10</option>
-      <option value="20" selected>20</option>
-      <option value="50">50</option>
-    </select>
-  <p> km </p>
-  </div>
+<div data-controller="search" data-search-address-value="<%= params[:address] %>" class="pt-5">
+  <div data-controller="toggle">
+    <div class="listings-headers d-flex justify-content-between mt-2 mx-2">
+      <div class="d-flex justify-content-center">
+        <p> Within: </p>
+        <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; width: 42px; text-align: right">
+          <option value="1">1</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+        </select>
+        <p> km </p>
+
+        <div>
+          <i class="fas fa-filter mx-3"
+          data-action="click->toggle#toggleTargets"
+          data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+        </div>
+      </div>
+    </div>
+
+<%# Modal  %>
+  <div class="modal fade" id="exampleModal" tabindex="-1"      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sort by Category</h5>
+          </div>
+            <div class="modal-body mx-auto">
+              <div data-toggle-target="hideable" hidden class="toggled-filter">
+                <%= form_with url: listings_path, method: :get, html: {
+                  data: { action: "submit->search#fetchListings"} } do |f| %>
+                  <% Listing::TAGS.each do |tag| %>
+                  <div class="checkbox inline">
+                    <%= f.check_box :tag_list, { multiple: true, include_hidden: false, data: {search_target: "filter"} }, tag %>
+                    <%= f.label :tag_list, tag %>
+                  </div>
+                  <% end %>
+                  <div class="d-felx justify-content-center">
+                    <%= f.submit class: "btn custom-btn", data: { search_target: "submitButton", bs_dismiss:"modal" } %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <%# <p>sort by: </p> %>
   <%# <p>items per row: </p> %>
 

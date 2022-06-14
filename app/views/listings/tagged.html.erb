@@ -1,0 +1,8 @@
+<% @listings.each do |listing| %>
+  <h2><%= listing.title %></h2>
+  <p>
+    <% listing.tag_list.each do |tag| %>
+      <%= link_to tag, tagged_path(tag: tag) %>
+    <% end %>
+  </p>
+<% end %>
