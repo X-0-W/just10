@@ -3,14 +3,16 @@ class ListingsController < ApplicationController
     respond_to do |format|
       if params[:address].present?
         @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
+      end
+      if params[:tag_list].present?
+        @listings = Listing.tagged_with(params[:tag_list], any: true)
+      end
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
         # end
         format.html
         format.text { render partial: "listings/results", locals: { listings: @listings }, formats: [:html] }
-      else
-        format.html { @listings = Listing.all }
-      end
+        # format.html { @listings = Listing.all }
     end
   end
 
