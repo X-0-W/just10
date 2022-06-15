@@ -7,12 +7,6 @@ export default class extends Controller {
     address: String,
   }
 
-  connect() {
-    console.log(this.distanceTarget);
-    console.log(this.addressValue);
-    console.log(this.filterTargets);
-  }
-
   fetchListings(event) {
     event.preventDefault();
     let url = `/listings?address=${this.addressValue}&distance=${this.distanceTarget.value}`;
@@ -21,9 +15,8 @@ export default class extends Controller {
         url = url + `&tag_list[]=${filter.value}`;
       }
     })
-    this.listTarget.classList.remove("index-cards");
-    this.listTarget.classList.add("loading-results");
-    this.listTarget.innerHTML = `<div class="lds-circle"><div></div></div>`;
+    console.log(url);
+    this.#AddLoader()
     fetch(url, {
       headers: { "Accept": "text/plain" }
     })
@@ -32,5 +25,11 @@ export default class extends Controller {
         this.listTarget.outerHTML = data;
         this.submitButtonTarget.disabled = false;
       });
+  }
+
+  #AddLoader() {
+    this.listTarget.classList.remove("index-cards");
+    this.listTarget.classList.add("loading-results");
+    this.listTarget.innerHTML = `<div class="lds-circle"><div></div></div>`;
   }
 }
