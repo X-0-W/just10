@@ -1,5 +1,6 @@
-<br>
 <div class="container-fluid">
   <h2 class="mt-3">Orders</h2>
-  <%= render "orders", orders: @orders %>
+  <%= render "orders_pending", orders: @orders %>
+  <h2 class="mt-3">For pickup</h2>
+  <%= render "orders_accepted", orders: @orders %>
 </div>
