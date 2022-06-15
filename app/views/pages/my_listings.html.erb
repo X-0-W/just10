@@ -1,5 +1,17 @@
-<br>
 <div class="container-fluid">
   <h2 class="mt-3">Listings</h2>
   <%= render "listings", listings: @listings %>
+  <h2 class="mt-3">Items to be picked up</h2>
+  <%= render "listings_pickup_display", listings: @listings %>
+
+  <%#
+  * tile
+  * add pick-up date
+  * add message icon to chatroom
+  * when status = completed remove from list
+   %>
+   <%#
+   3rd category
+   * completed listing?
+    %>
 </div>

@@ -1,20 +1,24 @@
 <div class="d-flex justify-content-around">
   <div class="footer">
     <div class="footer-links">
-    <%= link_to root_path do %>
-      <i class="fas fa-home"></i>
-    <% end %>
-    </div>
-    <div class="footer-links">
-    <%= link_to dashboard_path do %>
-      <i class="fas fa-shopping-cart"></i>
-    <% end %>
-    </div>
-    <div class="footer-links">
-    <%= link_to new_listing_path do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
-    </div>
+
+      <%= link_to root_path do %>
+        <i class="fas fa-home"></i>
+        <h6> home </h6>
+      <% end %>
+
+      <%= link_to dashboard_path do %>
+        <i class="fas fa-shopping-cart"></i>
+        <h6> orders </h6>
+        <% if current_user.notifications_count > 0 %>
+          <span class="dashboard-notifications"> <%= current_user.notifications_count %> </span>
+        <% end %>
+      <% end %>
+
+      <%= link_to new_listing_path do %>
+        <i class="fas fa-plus"></i>
+        <h6> sell </h6>
+      <% end %>
 
     </div>
   </div>

@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  TAGS = ["Toy", "Decoration", "Fashion", "Miscellaneous", "Exercise", "Furniture"]
+  TAGS = ["Kids", "Decoration", "Fashion", "Miscellaneous", "Exercise", "Furniture"]
   acts_as_favoritable
   belongs_to :user
   has_many :orders

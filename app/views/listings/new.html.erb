@@ -5,7 +5,7 @@
       <%= f.input :title %>
       <%= f.input :address %>
       <%= f.input :photo, as: :file %>
-      <%= f.input :tag_list, label: "Add Category", hint: "What is the category of item?" %>
+      <%= f.input :tag_list, label: "Choose Product Category", :collection => ["Kids", "Decoration", "Fashion", "Miscellaneous", "Exercise", "Furniture"] %>
       <%= f.input :collection_instruction %>
       <div class="d-flex justify-content-center">
         <%= f.submit "Add new item", class: "btn custom-btn"%>
