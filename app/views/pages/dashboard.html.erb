@@ -1,13 +1,20 @@
-<div class="container-fluid">
-  <ul>
-    <li>
-    <%= link_to "See your items for sale", my_listings_path, class: "btn custom-btn my-2 p-5" %>
-    </li>
-    <li>
-    <%= link_to "See your orders for items", my_orders_path, class: "btn custom-btn my-2 p-5"  %>
-    </li>
-    <li>
-    <%= link_to "See wishlisted items", my_wishlists_path, class: "btn custom-btn my-2 p-5"  %>
-    </li>
-  </ul>
+<div class="container text-center">
+    <div>
+      <%= link_to my_listings_path do %>
+        <%= image_tag "selling.png", height: 160, width: 280, id:"dashboard-card-1" %>
+        <h4>See your items for sale</h4>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to my_orders_path do  %>
+        <%= image_tag "order.png", height: 160, width: 280, id:"dashboard-card-1" %>
+        <h4>See your orders for items</h4>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to my_wishlists_path do %>
+        <%= image_tag "wishlist.png", height: 160, width: 280, id:"dashboard-card-1" %>
+        <h4>See wishlisted items</h4>
+      <% end %>
+    </div>
 </div>
