@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @listings = current_user.listings
+    @orders = current_user.orders
+    @user_wishlist_listings = current_user.favorited_listings
   end
 
   def my_listings
