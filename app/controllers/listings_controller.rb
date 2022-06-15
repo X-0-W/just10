@@ -7,9 +7,9 @@ class ListingsController < ApplicationController
         session[:last_coordinates] = [first_result.latitude, first_result.longitude]
         @listings = Listing.active.near(session[:last_coordinates], params[:distance] ||= 20).where.not(user: current_user)
         # @listings = Listing.near(params[:address], params[:distance] ||= 20).where.not(user: current_user)
-      end
-      if params[:tag_list].present?
-        @listings = Listing.tagged_with(params[:tag_list], any: true)
+        if params[:tag_list].present?
+          @listings = @listings.tagged_with(params[:tag_list], any: true)
+        end
       end
         # if params[:query].present?
         # @listings = @listings.where("title ILIKE ?", "%#{params[:query]}")
