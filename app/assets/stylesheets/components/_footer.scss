@@ -7,7 +7,6 @@
   color: rgba(0, 0, 0, 0.3);
   position: fixed;
   bottom: 0;
-  opacity: 0.8;
   justify-content: space-around;
   z-index: 10;
   box-shadow: 1px 1px 4px 1px #00000027;
@@ -20,10 +19,27 @@
 
 .footer-links a {
   color: black;
-  opacity: 0.8;
   text-decoration: none;
-  font-size: 32px;
+  font-size: 25px;
   padding: 0px 25px;
   text-align: center;
-  margin-top: 5px;
+
+  h6 {
+    margin-bottom: 0px;
+  }
+}
+
+.dashboard-icon {
+  position: absolute;
+}
+
+.order-notifications {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  font-size: x-small;
+  color: rgb(160, 218, 23);
+  background-color: red;
+  border-radius: 50%;
+  z-index: 1;
 }
