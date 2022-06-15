@@ -42,11 +42,15 @@
   background-size: cover;
   background-position: center;
 
-  .top-left-icon {
+  .top-right-icon {
     position: absolute;
     top: 2px;
-    left: 2px;
+    right: 2px;
     color: white;
+  }
+
+  .large-heart {
+    font-size: x-large;
   }
 
   .bottom-right-icon {
@@ -91,7 +95,7 @@
   height: 108px;
   width: 108px;
 
-  .top-left-icon {
+  .top-right-icon {
     position: absolute;
     top: 2px;
     left: 2px;
