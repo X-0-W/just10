@@ -1,18 +1,27 @@
 <div class="row flex-nowrap scrollable-card">
   <%# for each order, get listing and display listing %>
-  <% listings.each do |listing| %>
+  <% current_user.seller_orders.accepted.each do |order| %>
+    <% listing = order.listing %>
     <div class="dashboard-card ms-2 me-2" style="width: 16rem">
-      <%= link_to listing_orders_path(listing) do %>
-        <div class="card dashboard-card-img ">
-          <%= cl_image_tag listing.photo.key %>
+      <div class="card dashboard-card-img ">
+        <%= cl_image_tag listing.photo.key %>
+      </div>
+      <div>
+        <%= listing.title %>
+        <p>Pickup time: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
+        <div class="btn btn-background-transparent">
+          <% if @chatroom.nil? %>
+            <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+          <% else %>
+            <%= link_to chatroom_path(@chatroom) do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+          <% end %>
         </div>
-        <div>
-          <%= listing.title %>
-          <%= listing.orders.where(status: 'accepted') %>
-          <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
-        </div>
-      <% end %>
-      <div class="me-3"></div>
+        Message the buyer
+      </div>
     </div>
   <% end %>
 </div>

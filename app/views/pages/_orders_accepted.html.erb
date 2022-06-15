@@ -1,10 +1,10 @@
 <div class="row flex-nowrap ">
   <%# for each order, if the order is accepted, get order and display order %>
+  <tr>
   <% orders.each do |order| %>
     <% if order.status == "accepted" %>
-      <tr>
-
-      </tr>
+        <%= render "order_display", order: order %></td>
     <% end %>
   <% end %>
+  </tr>
 </div>

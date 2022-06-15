@@ -3,7 +3,17 @@
   <tr>
   <% orders.each do |order| %>
     <% if order.status == "pending" %>
-      <%= render "order_display", order: order %></td>
+      <th scope="col">
+        <div class="dashboard-card me-1 ms-1" style="width: 16rem">
+          <%= link_to order_path(order.id) do %>
+            <div class="card dashboard-card-img">
+              <%= cl_image_tag order.listing.photo.key %>
+            </div>
+              <%= order.listing.title %>
+            <p> Status: <%= order.status %></p>
+          <% end %>
+        </div>
+      </th>
     <% end %>
   <% end %>
   </tr>
