@@ -43,8 +43,8 @@ users = User.all
 
 random_user = users.sample
 file = URI.open('https://media.istockphoto.com/photos/wooden-cube-block-flipping-change-step-1-to-2-on-table-for-project-picture-id1334466448?b=1&k=20&m=1334466448&s=170667a&w=0&h=FbQ-bo4wlFTn6-FDZzcjtySH6mUVKpxEnrjD5KXNQuk=')
-list1 = Listing.new(title: "step toy", collection_instruction: "I will drop it at front door of my house", user: random_user, address: random_user.address, tag_list: "Toy" )
-list1.photo.attach(io: file, filename: "stepToy.png", content_type: 'image/png')
+list1 = Listing.new(title: "step Kids", collection_instruction: "I will drop it at front door of my house", user: random_user, address: random_user.address, tag_list: "Kids" )
+list1.photo.attach(io: file, filename: "stepKids.png", content_type: 'image/png')
 list1.save!
 p "1 seeded"
 
@@ -92,7 +92,7 @@ p "7 seeded"
 
 random_user = users.sample
 file = URI.open('https://i.etsystatic.com/6017061/r/il/a95967/881348688/il_fullxfull.881348688_79dt.jpg')
-list8 = Listing.new(title: "Old gameboy - no games", collection_instruction: "Please call to arrange pick up", user: random_user, address: random_user.address, tag_list: "Toy")
+list8 = Listing.new(title: "Old gameboy - no games", collection_instruction: "Please call to arrange pick up", user: random_user, address: random_user.address, tag_list: "Kids")
 list8.photo.attach(io: file, filename: "gameboy.jpg", content_type: 'image/jpg')
 list8.save!
 p "8 seeded"
