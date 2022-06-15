@@ -6,12 +6,12 @@
     <%# <% search_coordinates = Geocoder.coordinates(params[:address]) %>
     <%# <% distance = Geocoder::Calculations.distance_between(listing_coordinates, session[:last_coordinates]) %>
     <%= link_to listing_path(listing) do %>
-        <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path listing.photo.key %>)">
-          <div class="top-left-icon">
+        <div class="index-card" style="background-image: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path listing.photo.key %>)">
+          <div class="top-right-icon">
             <% if current_user.favorited?(listing) %>
               <i class="fas fa-heart"></i>
-            <% else %>
-              <i class="far fa-heart"></i>
+            <%# <% else %>
+              <%# <i class="far fa-heart"></i> %>
             <% end %>
           </div>
           <div class="bottom-right-icon">

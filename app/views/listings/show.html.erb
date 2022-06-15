@@ -1,7 +1,7 @@
 <div class="container text-center">
   <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path @listing.photo.key %>)">
 
-    <div class="top-left-icon" data-controller="favorite">
+    <div class="top-right-icon large-heart" data-controller="favorite">
       <% if current_user.favorited?(@listing) %>
         <%= link_to favorite_listing_path(@listing, value: false), method: :patch do %>
           <i class="fas fa-heart"></i>
@@ -18,7 +18,7 @@
   </div>
 
 
-  <div class="mb-5 pb-5 border-bottom">
+  <div class="pt-3 mb-5 pb-5 border-bottom">
     <h1> <%= @listing.title.capitalize %> </h1>
     <div class="d-flex justify-content-center">
       <div class="listing-user" style="font-style: italic">
@@ -52,9 +52,12 @@
       <% @other_listings_from_same_user.each do |listing| %>
         <%= link_to listing_path(listing) do %>
           <div class="seller-other-card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= cl_image_path listing.photo.key %>)">
-            <div class="top-left-icon">
-              <%# <i class="fas fa-heart"></i> --> wishlist %>
-              <i class="far fa-heart"></i>
+            <div class="top-right-icon">
+              <% if current_user.favorited?(listing) %>
+                <i class="fas fa-heart"></i>
+              <%# <% else %>
+                <%# <i class="far fa-heart"></i> %>
+              <% end %>
             </div>
           </div>
         <% end %>
