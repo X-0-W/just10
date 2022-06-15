@@ -1,4 +1,13 @@
 <div class="container-fluid">
-  <%= link_to "See my listings", my_listings_path %>
-  <%= link_to "See my orders", my_orders_path %>
+  <ul>
+    <li>
+    <%= link_to "See your items for sale", my_listings_path, class: "btn custom-btn my-2 p-5" %>
+    </li>
+    <li>
+    <%= link_to "See your orders for items", my_orders_path, class: "btn custom-btn my-2 p-5"  %>
+    </li>
+    <li>
+    <%= link_to "See wishlisted items", my_wishlists_path, class: "btn custom-btn my-2 p-5"  %>
+    </li>
+  </ul>
 </div>

@@ -1,0 +1,10 @@
+<th scope="col">
+  <div class="dashboard-card me-1 ms-1" style="width: 16rem">
+    <% listings.each do |listing| %>
+      <div class="card">
+        <%= cl_image_tag listing.photo.key %>
+      </div>
+        <%= listing.title %>
+    <% end %>
+  </div>
+</th>
