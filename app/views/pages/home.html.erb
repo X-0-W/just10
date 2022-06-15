@@ -1,49 +1,120 @@
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path "MelbourneMap.png" %>')">
 
-<div class='g-glossy p-3'>
-  <h3><strong>Find your local tresures for just $10!</strong></h3>
+  <div class='g-glossy p-3'>
+    <h3 class="mb-3"><strong>Find local treasures
+    for just $10!</strong></h3>
+    <%= form_with url: listings_path, method: :get do |f| %>
+      <div class="container">
+        <div data-controller="geocoder" data-geocoder-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <%= f.text_field :address, data: { geocoder_target: "address" }, class: "d-none" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit 'Enter address', class: "btn custom-btn my-2" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="cards">
-    <% @listings.first(15).each do |listing| %>
-      <%= link_to listing_path(listing) do %>
-          <div class="card">
-            <% if listing.photo.attached? %>
-              <%= image_tag listing.photo, crop: :fill, size:100 %>
-            <% else %>
-              <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-            <% end %>
-          </div>
+
+  <div class="scroll-left">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
-
-    <div class="container">
   </div>
+
+
+  <div class="scroll-right">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-left">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="scroll-right">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-left">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="scroll-right">
+    <div class="inner">
+      <div class="scroll-cards">
+        <% @listings.first(15).each do |listing| %>
+            <div class="home-card">
+              <% if listing.photo.attached? %>
+                <%= image_tag listing.photo, crop: :fill, size:100 %>
+              <% else %>
+                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
+              <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-    <%# <div class="container">
-      <%= form_tag listings_path, method: :get do %>
-        <%#= text_field_tag :query,
-          params[:query],
-          class: "form-control mt-2",
-          placeholder: "What are you looking for?"%>
-        <%# <div class="d-flex justify-content-center mt-2">
-          <%= submit_tag "Try Now", class: "btn custom-btn" %>
-        <%# </div> %>
-      <%# <% end %>
-    <%# </div> %>
-  <%# </div> %>
-
-
-<%= form_with url: listings_path, method: :get do |f| %>
-  <div class="container">
-    <div data-controller="geocoder" data-geocoder-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      <%= f.text_field :address, data: { geocoder_target: "address" }, class: "d-none" %>
-    </div>
-    <div class="text-center">
-      <%= f.submit 'Enter address', class: "btn custom-btn my-2" %>
-    </div>
-  </div>
-<% end %>
 
 
 <%# form_tag listings_path, method: :get do %>
