@@ -10,7 +10,9 @@
       <%= link_to dashboard_path do %>
         <i class="fas fa-shopping-cart"></i>
         <h6> orders </h6>
-        <%# <% if current_user.listing %>
+        <% if current_user.notifications_count > 0 %>
+          <span class="dashboard-notifications"> <%= current_user.notifications_count %> </span>
+        <% end %>
       <% end %>
 
       <%= link_to new_listing_path do %>
@@ -18,7 +20,6 @@
         <h6> sell </h6>
       <% end %>
 
-      <span class="dashboard-notifications">99</span>
     </div>
   </div>
 </div>

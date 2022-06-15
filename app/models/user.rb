@@ -13,7 +13,6 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :seller_orders, through: :listings, source: :orders
   has_many :seller_reviews, through: :seller_orders, source: :review
-  # has_many :reviews, through: :orders, source: :review => IF TO SEE MY OWN REVIEWS I LEFT
 
   has_one_attached :photo
 
@@ -21,6 +20,10 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def score
-    (seller_reviews.where(approval: true).size.fdiv(seller_reviews.size) * 100).round()
+    (seller_reviews.where(approval: true).size.fdiv(seller_reviews.size) * 100).round
+  end
+
+  def notifications_count
+    seller_orders.where(status: :pending).count + orders.where(status: :accepted).count
   end
 end
