@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <%= link_to dashboard_path do %>
+    <i class="fas fa-angle-left"></i>
+  <% end %>
   <h2 class="mt-3">Listings</h2>
   <%= render "listings", listings: @listings %>
   <h2 class="mt-3">Items to be picked up</h2>

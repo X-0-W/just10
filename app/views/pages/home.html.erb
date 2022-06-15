@@ -1,15 +1,14 @@
 <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path "MelbourneMap.png" %>')">
 
   <div class='g-glossy p-3'>
-    <h3 class="mb-3"><strong>Find local treasures
-    for just $10!</strong></h3>
+    <h3 class="mb-3"><strong>Find local treasures for just $10!</strong></h3>
     <%= form_with url: listings_path, method: :get do |f| %>
       <div class="container">
         <div data-controller="geocoder" data-geocoder-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-          <%= f.text_field :address, data: { geocoder_target: "address" }, class: "d-none" %>
+          <%= f.text_field :address, placeholder: 'Enter address', data: { geocoder_target: "address" }, class: "d-none" %>
         </div>
         <div class="text-center">
-          <%= f.submit 'Enter address', class: "btn custom-btn my-2" %>
+          <%= f.submit 'Search', class: "btn custom-btn my-2" %>
         </div>
       </div>
     <% end %>
@@ -20,28 +19,19 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
     </div>
   </div>
 
-
   <div class="scroll-right">
     <div class="inner">
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
@@ -53,11 +43,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
@@ -70,11 +56,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
@@ -86,11 +68,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
@@ -103,11 +81,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-              <% if listing.photo.attached? %>
                 <%= image_tag listing.photo, crop: :fill, size:100 %>
-              <% else %>
-                <%= image_tag "bunny.jpg", crop: :fill, size:100 %>
-              <% end %>
             </div>
         <% end %>
       </div>
