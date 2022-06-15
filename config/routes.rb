@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/tagged', to: "listings#tagged", as: :tagged
   get '/dashboard/my_orders', to: 'pages#my_orders', as: 'my_orders'
   get '/dashboard/my_listings', to: 'pages#my_listings', as: 'my_listings'
+  get '/dashboard/my_wishlists', to: 'pages#my_wishlists', as: 'my_wishlists'
 
   resources :users, only: [] do
     resources :chatrooms, only: [:create]

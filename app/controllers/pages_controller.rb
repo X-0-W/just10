@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def my_orders
     @orders = current_user.orders
   end
+
+  def my_wishlists
+    @user_wishlist_listings = current_user.favorited_listings
+  end
 end

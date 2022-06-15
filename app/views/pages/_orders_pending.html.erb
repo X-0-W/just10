@@ -1,10 +1,10 @@
 <div class="row flex-nowrap scrollable-card">
   <%# for each order, get listing and display listing %>
+  <tr>
   <% orders.each do |order| %>
     <% if order.status == "pending" %>
-      <tr>
-        <td><%= render "order_display", order: order %></td>
-      </tr>
+      <%= render "order_display", order: order %></td>
     <% end %>
   <% end %>
+  </tr>
 </div>
