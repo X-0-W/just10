@@ -1,23 +1,30 @@
 // Specific CSS for your home-page
 .g-glossy {
   position: absolute;
-  top: 34%;
-  left: 5%;
+  top: 35.5%;
+  left: 3%;
   z-index: 100;
-  width: 90%;
-  height: 221px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  color: rgb(255, 255, 255);
+  width: 94%;
+  height: 199px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(11px);
+  color: white;
   font-size: 20px;
   justify-content: center;
   align-items: center;
-  border-radius: 30px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5%;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0, 0.3);
   text-align: center;
+  text-align: -webkit-center;
+  text-align-last: center;
+
+    h3 {
+      width: 75%;
+    }
 }
 
 .background {
   z-index: -100;
   object-fit: cover;
+  height: 623px;
 }
