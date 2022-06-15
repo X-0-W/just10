@@ -38,6 +38,71 @@ user_ethan.photo.attach(io: file, filename: "ethan.jpg", content_type: 'image/jp
 user_ethan.save!
 p "ethan seeded"
 
+user_julien = User.create!(email: "julienc@gmail.com", password: "testing", first_name: "Julien", last_name: "Chagnon", address: "9 Maffra St, Coolaroo VIC 3048", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/50136284?v=4')
+user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
+user_julien.save!
+p "julien seeded"
+
+user_neil = User.create!(email: "neil@gmail.com", password: "testing", first_name: "Neil", last_name: "Chen", address: "Bennelong Point, Sydney NSW 2000", phone: "0423123456")
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1650542650/pr9pvkvqj6nversopejr.jpg')
+user_neil.photo.attach(io: file, filename: "neil.jpg", content_type: 'image/jpg')
+user_neil.save!
+p "neil seeded"
+
+user_aren = User.create!(email: "aren@gmail.com", password: "testing", first_name: "Aren", last_name: "Clissold", address: "18 Irving St, Footscray VIC 3011", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/72479887?v=4')
+user_aren.photo.attach(io: file, filename: "aren.jpg", content_type: 'image/jpg')
+user_aren.save!
+p "aren seeded"
+
+user_shannon = User.create!(email: "shannon@gmail.com", password: "testing", first_name: "Shannon", last_name: "Gordon", address: "25 McCarthy Rd, Monbulk VIC 3793", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/94883494?v=4')
+user_shannon.photo.attach(io: file, filename: "shannon.jpg", content_type: 'image/jpg')
+user_shannon.save!
+p "shannon seeded"
+
+user_yujia = User.create!(email: "yujia@gmail.com", password: "testing", first_name: "Yujia", last_name: "Gu", address: "North Terrace, Adelaide SA 5000", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/96090501?v=4')
+user_yujia.photo.attach(io: file, filename: "yujia.jpg", content_type: 'image/jpg')
+user_yujia.save!
+p "yujia seeded"
+
+user_Yaron = User.create!(email: "Yaron@gmail.com", password: "testing", first_name: "Yaron", last_name: "Kraushar", address: "100 Shiralee Rd, Orange NSW 2800", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/65701682?v=4')
+user_Yaron.photo.attach(io: file, filename: "Yaron.jpg", content_type: 'image/jpg')
+user_Yaron.save!
+p "Yaron seeded"
+
+user_leah = User.create!(email: "leah@gmail.com", password: "testing", first_name: "Leah", last_name: "Moesch", address: "99 Rose St, Fitzroy VIC 3065", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/102561039?v=4')
+user_leah.photo.attach(io: file, filename: "leah.jpg", content_type: 'image/jpg')
+user_leah.save!
+p "leah seeded"
+
+user_kevin = User.create!(email: "kevin@gmail.com", password: "testing", first_name: "Kevin", last_name: "Nguyen", address: "162 Somerville Rd, Yarraville VIC 3013", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/49255634?v=4')
+user_kevin.photo.attach(io: file, filename: "kevin.jpg", content_type: 'image/jpg')
+user_kevin.save!
+p "kevin seeded"
+
+user_julien = User.create!(email: "julienv@gmail.com", password: "testing", first_name: "julien", last_name: "Voraz", address: "17 Progress St, Dandenong South VIC 3175", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/102274282?v=4')
+user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
+user_julien.save!
+p "julien seeded"
+
+user_hayden = User.create!(email: "hayden@gmail.com", password: "testing", first_name: "Hayden", last_name: "Walker", address: "136 Weston St, Brunswick East VIC 3057", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/62589313?v=4')
+user_hayden.photo.attach(io: file, filename: "hayden.jpg", content_type: 'image/jpg')
+user_hayden.save!
+p "hayden seeded"
+
+user_caz = User.create!(email: "caz@gmail.com", password: "testing", first_name: "Caz", last_name: "Wong", address: "Mount Buller Tourists Road, Mirimbah VIC 3722", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/102901545?v=4')
+user_caz.photo.attach(io: file, filename: "caz.jpg", content_type: 'image/jpg')
+user_caz.save!
+p "caz seeded"
 
 users = User.all
 
@@ -173,3 +238,30 @@ Review.create(order: Order.last, approval: false)
 p "Review seeded"
 
 p "seed completed"
+
+salt_lamp = 'https://i.ebayimg.com/images/g/jQoAAOSwS7RhBWZX/s-l500.jpg'
+lava_lamp = 'https://i.ebayimg.com/images/g/YWUAAOSw9SJdA0BF/s-l500.jpg'
+pot = 'https://i.ebayimg.com/thumbs/images/g/tvUAAOSwpqJingpX/s-l225.webp'
+stool = 'https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29vZCUyMHN0b29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+tools = 'https://images.unsplash.com/photo-1508872558182-ffc7f1b387f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b2xkJTIwdG9vbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
+kettle = 'https://images.unsplash.com/photo-1594213114663-d94db9b17125?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBvdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+vase_flower = 'https://images.unsplash.com/photo-1554577621-1a3def0b656c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmFzZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
+bean_bag = 'https://kmartau.mo.cloudinary.net/f09095db-dbb0-498c-aeaf-eeb6bf087902.jpg?tx=w_600,h_600'
+golf_clubs = 'https://clubhouse.swingu.com/wp-content/uploads/2017/03/oldestgolfclubsale.jpg'
+suitcase = 'http://t2.gstatic.com/shopping?q=tbn:ANd9GcQsZcJNqyxH4l0oSTLPs4GlCoXMMauw0mGKdmaowFippD90Wz75KTlK0PeH5mtCDTTwGdXK2WY4_Q4QRqtlaTnHuXoyZiNEiB5PCZ04xt6aT1N1G5uq_7-IbA&usqp=CAY'
+skateboard = 'https://cdn.shopify.com/s/files/1/0092/1085/5524/products/Loaded-Mata-Hari-complete-2048p_1024x.jpg?v=1632871185'
+scooter = 'https://i.ebayimg.com/images/g/ITIAAOSwm4FikGYs/s-l500.jpg'
+swiss_ball = 'https://i.ebayimg.com/images/g/d5kAAOSwz0JgRmHs/s-l500.jpg'
+old_tennis_racket = 'https://i.ebayimg.com/images/g/C~MAAOSw0EJia1o8/s-l500.jpg'
+chess = 'https://shop.houseofmarbles.com/wp-content/uploads/2019/05/255558-Chess-Set-Contents.jpg'
+wheelbarrow = 'https://i.ebayimg.com/images/g/iyQAAOSwgGlhCkPu/s-l640.jpg'
+tea_glass = 'https://cdn.shopify.com/s/files/1/0414/5804/0983/products/611159430_667x.jpg?v=1607056008'
+cat_post = 'https://m.media-amazon.com/images/I/41DKciK9Y6L._AC_SY580_.jpg'
+dog_bed = 'https://images.squarespace-cdn.com/content/v1/5d68769836604b0001c10b55/1596693322167-PL9YS2E5FMPJBAFIK0OS/18.jpg?format=2500w'
+paris_painting = 'https://artwork.wallartprints.com/media/catalog/product/cache/97679f4195b38ac9f6ee160209a84f40/1/6/167017446_StretchedCanvas_1.jpg'
+movie_poster = 'https://img.buzzfeed.com/buzzfeed-static/static/2022-03/28/2/asset/2b92f7d73e60/sub-buzz-6384-1648433205-1.jpg'
+marvel_dvd_set = 'https://www.couponing101.com/wp-content/uploads/2013/11/Marvel-Blu-ray-Collection.png'
+outdoor_chairs = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_primary.jpg'
+outdoor_table = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_primary.jpg'
+baby_walker = 'https://images.unsplash.com/photo-1599082779777-8edeb377cdef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
+lego = 'https://www.bigw.com.au/medias/sys_master/images/images/h4e/h57/10668855623710.jpg'

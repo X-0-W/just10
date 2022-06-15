@@ -10,7 +10,7 @@
       <%= link_to dashboard_path do %>
         <i class="fas fa-shopping-cart"></i>
         <h6> orders </h6>
-        <% if current_user.notifications_count > 0 %>
+        <% if user_signed_in? && current_user.notifications_count > 0 %>
           <span class="dashboard-notifications"> <%= current_user.notifications_count %> </span>
         <% end %>
       <% end %>

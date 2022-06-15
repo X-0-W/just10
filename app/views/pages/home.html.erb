@@ -1,5 +1,5 @@
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path "MelbourneMap.png" %>')">
-
+<div >
+ <%# <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= image_path "MelbourneMap.png" %>
   <div class='g-glossy p-3'>
     <h3 class="mb-3"><strong>Find local treasures for just $10!</strong></h3>
     <%= form_with url: listings_path, method: :get do |f| %>
@@ -19,7 +19,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
@@ -31,7 +31,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
@@ -43,7 +43,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
@@ -56,7 +56,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
@@ -68,7 +68,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
@@ -81,7 +81,7 @@
       <div class="scroll-cards">
         <% @listings.first(15).each do |listing| %>
             <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size:100 %>
+                <%= image_tag listing.photo, crop: :fill, size: 80 %>
             </div>
         <% end %>
       </div>
