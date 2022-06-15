@@ -38,7 +38,7 @@ user_ethan.photo.attach(io: file, filename: "ethan.jpg", content_type: 'image/jp
 user_ethan.save!
 p "ethan seeded"
 
-user_julien = User.create!(email: "julien@gmail.com", password: "testing", first_name: "Julien", last_name: "Chagnon", address: "9 Maffra St, Coolaroo VIC 3048", phone: "0423123456")
+user_julien = User.create!(email: "julienc@gmail.com", password: "testing", first_name: "Julien", last_name: "Chagnon", address: "9 Maffra St, Coolaroo VIC 3048", phone: "0423123456")
 file = URI.open('https://avatars.githubusercontent.com/u/50136284?v=4')
 user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
 user_julien.save!
@@ -86,7 +86,7 @@ user_kevin.photo.attach(io: file, filename: "kevin.jpg", content_type: 'image/jp
 user_kevin.save!
 p "kevin seeded"
 
-user_julien = User.create!(email: "julien@gmail.com", password: "testing", first_name: "julien", last_name: "Voraz", address: "17 Progress St, Dandenong South VIC 3175", phone: "0423123456")
+user_julien = User.create!(email: "julienv@gmail.com", password: "testing", first_name: "julien", last_name: "Voraz", address: "17 Progress St, Dandenong South VIC 3175", phone: "0423123456")
 file = URI.open('https://avatars.githubusercontent.com/u/102274282?v=4')
 user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
 user_julien.save!
