@@ -1,25 +1,30 @@
 <div class="row flex-nowrap scrollable-card">
   <%# for each order, get listing and display listing %>
-  <% current_user.seller_orders.accepted.each do |order| %>
-    <% listing = order.listing %>
-    <div class="dashboard-card ms-2 me-2" style="width: 16rem">
-      <div class="card dashboard-card-img ">
-        <%= cl_image_tag listing.photo.key %>
-      </div>
-      <div class="dashboard-card-text">
-        <%= listing.title %>
-        <p class="fw-bold">Pickup: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
-        <%= cl_image_tag order.user.photo.key, class: "avatar" %>
-        <% if current_user.chatroom_with(order.user).nil? %>
-          <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post, class: "dashboard-card-message" do %>
-            <i class="far fa-comment"></i>
+  <% i = 0 %>
+    <% current_user.seller_orders.accepted.each do |order| %>
+      <% listing = order.listing %>
+      <div class="dashboard-card ms-2 me-2" style="width: 16rem">
+        <div class="card dashboard-card-img ">
+          <%= cl_image_tag listing.photo.key %>
+        </div>
+        <div class="dashboard-card-text">
+          <%= listing.title %>
+          <p class="fw-bold">Pickup: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
+          <%= cl_image_tag order.user.photo.key, class: "avatar" %>
+          <% if current_user.chatroom_with(order.user).nil? %>
+            <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post, class: "dashboard-card-message" do %>
+              <i class="far fa-comment"></i>
+            <% end %>
+          <% else %>
+            <%= link_to chatroom_path(current_user.chatroom_with(order.user)), class: "dashboard-card-message" do %>
+              <i class="far fa-comment"></i>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= link_to chatroom_path(current_user.chatroom_with(order.user)), class: "dashboard-card-message" do %>
-            <i class="far fa-comment"></i>
-          <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
+      <% i += 1 %>
+    <% end %>
+  <% if i.zero? %>
+    <p><em>No items awaiting collection</em></p>
   <% end %>
 </div>

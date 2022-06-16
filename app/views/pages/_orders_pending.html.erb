@@ -1,6 +1,7 @@
 <div class="row flex-nowrap scrollable-card">
   <%# for each order, get listing and display listing %>
   <tr>
+  <% i = 0 %>
   <% orders.each do |order| %>
     <% if order.status == "pending" %>
       <th scope="col">
@@ -18,7 +19,11 @@
           <% end %>
         </div>
       </th>
+      <% i += 1 %>
     <% end %>
+  <% end %>
+  <% if i.zero? %>
+    <p><em>No pending offers</em></p>
   <% end %>
   </tr>
 </div>

@@ -20,8 +20,6 @@ user_reiko.photo.attach(io: file, filename: "reiko.png", content_type: 'image/pn
 user_reiko.save!
 p "reiko seeded"
 
-
-
 user_xander = User.create!(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Wellingham", address: "38 Garnet Street, Brunswick, Vic 3056", phone: "0422123456")
 file = URI.open('https://avatars.githubusercontent.com/u/77281250?v=4')
 user_xander.photo.attach(io: file, filename: "xander.png", content_type: 'image/png')
@@ -160,7 +158,7 @@ p "8 seeded"
 
 random_user = users.sample
 file = URI.open('https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F10%2Fbored-ape-yacht-club-nft-3-4-million-record-sothebys-metaverse-0.jpg?w=960&cbr=1&q=90&fit=max')
-list9 = Listing.new(title: "digital cartoon of ape", collection_instruction: "I can leave this at front porch", user: random_user, address: random_user.address, tag_list: "Decoration")
+list9 = Listing.new(title: "digital cartoon of ape", collection_instruction: "I'll print it for you when you get here'", user: random_user, address: random_user.address, tag_list: "Decoration")
 list9.photo.attach(io: file, filename: "cartoon.jpg", content_type: 'image/jpg')
 list9.save!
 p "9 seeded"
@@ -235,35 +233,6 @@ list15.save!
 p "Review seeded"
 
 p "seed completed"
-
-# ignore - possible seed items
-
-salt_lamp = 'https://i.ebayimg.com/images/g/jQoAAOSwS7RhBWZX/s-l500.jpg'
-lava_lamp = 'https://i.ebayimg.com/images/g/YWUAAOSw9SJdA0BF/s-l500.jpg'
-pot = 'https://i.ebayimg.com/thumbs/images/g/tvUAAOSwpqJingpX/s-l225.webp'
-stool = 'https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8d29vZCUyMHN0b29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
-tools = 'https://images.unsplash.com/photo-1508872558182-ffc7f1b387f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b2xkJTIwdG9vbHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'
-kettle = 'https://images.unsplash.com/photo-1594213114663-d94db9b17125?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBvdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
-vase_flower = 'https://images.unsplash.com/photo-1554577621-1a3def0b656c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmFzZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'
-bean_bag = 'https://kmartau.mo.cloudinary.net/f09095db-dbb0-498c-aeaf-eeb6bf087902.jpg?tx=w_600,h_600'
-golf_clubs = 'https://clubhouse.swingu.com/wp-content/uploads/2017/03/oldestgolfclubsale.jpg'
-suitcase = 'http://t2.gstatic.com/shopping?q=tbn:ANd9GcQsZcJNqyxH4l0oSTLPs4GlCoXMMauw0mGKdmaowFippD90Wz75KTlK0PeH5mtCDTTwGdXK2WY4_Q4QRqtlaTnHuXoyZiNEiB5PCZ04xt6aT1N1G5uq_7-IbA&usqp=CAY'
-skateboard = 'https://cdn.shopify.com/s/files/1/0092/1085/5524/products/Loaded-Mata-Hari-complete-2048p_1024x.jpg?v=1632871185'
-scooter = 'https://i.ebayimg.com/images/g/ITIAAOSwm4FikGYs/s-l500.jpg'
-swiss_ball = 'https://i.ebayimg.com/images/g/d5kAAOSwz0JgRmHs/s-l500.jpg'
-old_tennis_racket = 'https://i.ebayimg.com/images/g/C~MAAOSw0EJia1o8/s-l500.jpg'
-chess = 'https://shop.houseofmarbles.com/wp-content/uploads/2019/05/255558-Chess-Set-Contents.jpg'
-wheelbarrow = 'https://i.ebayimg.com/images/g/iyQAAOSwgGlhCkPu/s-l640.jpg'
-tea_glass = 'https://cdn.shopify.com/s/files/1/0414/5804/0983/products/611159430_667x.jpg?v=1607056008'
-cat_post = 'https://m.media-amazon.com/images/I/41DKciK9Y6L._AC_SY580_.jpg'
-dog_bed = 'https://images.squarespace-cdn.com/content/v1/5d68769836604b0001c10b55/1596693322167-PL9YS2E5FMPJBAFIK0OS/18.jpg?format=2500w'
-paris_painting = 'https://artwork.wallartprints.com/media/catalog/product/cache/97679f4195b38ac9f6ee160209a84f40/1/6/167017446_StretchedCanvas_1.jpg'
-movie_poster = 'https://img.buzzfeed.com/buzzfeed-static/static/2022-03/28/2/asset/2b92f7d73e60/sub-buzz-6384-1648433205-1.jpg'
-marvel_dvd_set = 'https://www.couponing101.com/wp-content/uploads/2013/11/Marvel-Blu-ray-Collection.png'
-outdoor_chairs = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_primary.jpg'
-outdoor_table = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_primary.jpg'
-baby_walker = 'https://images.unsplash.com/photo-1599082779777-8edeb377cdef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-lego = 'https://www.bigw.com.au/medias/sys_master/images/images/h4e/h57/10668855623710.jpg'
 
 
 # test seeds:

@@ -3,21 +3,21 @@
       <%= link_to my_listings_path do %>
         <%= image_tag "selling.png", height: 160, width: 280, id:"dashboard-card-1" %>
         <h4 class="px-3">See Your Items For Sale</h4>
-        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@listings.size, "item") %> (<%= @listings.includes(:orders).where(orders: { status: "pending" }).distinct(:listings).size %> awaiting response)</p>
+        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@listings.size, "item") %> (<%= @listings.includes(:orders).where(orders: { status: "pending" }).distinct(:listings).size %> awaiting response) <i class="fas fa-solid fa-caret-right arrow-right"></i></p>
       <% end %>
     </div>
     <div class="container">
       <%= link_to my_orders_path do  %>
         <%= image_tag "order.png", height: 160, width: 280, id:"dashboard-card-1" %>
         <h4 class="px-3">See Your Orders</h4>
-        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@orders.size, "offer") %> made (<%= current_user.orders.accepted.size %> to collect) </p>
+        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@orders.size, "offer") %> made (<%= current_user.orders.accepted.size %> to collect) <i class="fas fa-solid fa-caret-right arrow-right"></i> </p>
       <% end %>
     </div>
     <div class="container">
       <%= link_to my_wishlists_path do %>
         <%= image_tag "wishlist.png", height: 160, width: 280, id:"dashboard-card-1" %>
         <h4 class="px-3">See Your Wishlist</h4>
-        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@user_wishlist_listings.size, "item") %></p>
+        <p class="px-3" style="opacity: 0.7"> <%= pluralize(@user_wishlist_listings.size, "item") %> <i class="fas fa-solid fa-caret-right arrow-right"></i></p>
       <% end %>
     </div>
 </div>
