@@ -10,7 +10,7 @@
         <p style="font-weight: 600; margin: 0;"><%= listing.title %> </p>
         <p>Pickup time: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
         <div class="d-flex justify-content-between">
-          <p>Seller: <%= order.user.first_name %></p>
+          <p>Buyer :<%= order.user.first_name %></p>
           <div class="btn btn-background-transparent shadow border border-light mb-2">
             <% if current_user.chatroom_with(order.user).nil? %>
               <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post do %>
