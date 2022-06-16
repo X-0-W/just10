@@ -13,12 +13,12 @@
             <p> </p>
           <% end %>
           <div class="btn btn-background-transparent">
-            <% if @chatroom.nil? %>
+            <% if current_user.chatroom_with(order.listing.user).nil? %>
               <%= link_to user_chatrooms_path(current_user, recipient_id: order.listing.user.id), method: :post do %>
                 <i class="far fa-comment"></i>
               <% end %>
             <% else %>
-              <%= link_to chatroom_path(@chatroom) do %>
+              <%= link_to chatroom_path(current_user.chatroom_with(order.listing.user)) do %>
                 <i class="far fa-comment"></i>
               <% end %>
             <% end %>
