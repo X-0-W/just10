@@ -2,7 +2,7 @@
   <%= link_to dashboard_path do %>
     <i class="fas fa-angle-left"></i>
   <% end %>
-  <h2 class="mt-3">Wishlisted items:</h2>
+  <h2 class="mt-3">Your Wishlist</h2>
   <div class="scrollable-card">
     <table>
       <%= render "wishlisted_display", listings: @user_wishlist_listings  %>

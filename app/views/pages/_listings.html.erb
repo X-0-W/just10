@@ -8,7 +8,7 @@
           <%= cl_image_tag listing.photo.key %>
         </div>
         <div>
-          <%= listing.title %>
+          <p style="font-weight: 600; margin: 0;"> <%= listing.title %></p>
           <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
         </div>
       <% end %>
