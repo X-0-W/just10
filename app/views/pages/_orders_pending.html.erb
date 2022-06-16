@@ -9,8 +9,8 @@
             <div class="card dashboard-card-img">
               <%= cl_image_tag order.listing.photo.key %>
             </div>
-              <%= order.listing.title %>
-            <p> Status: <%= order.status %></p>
+            <%= order.listing.title %>
+            <p style="font-weight: 400;"> Status: <%= order.status %></p>
           <% end %>
         </div>
       </th>
