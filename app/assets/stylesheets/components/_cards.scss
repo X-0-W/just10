@@ -71,8 +71,8 @@
 
 #listings-counter {
   position: absolute;
-  top: -31px;
-  right: 0;
+  top: -34px;
+  left: 0;
 }
 
 .listings-headers {
@@ -80,6 +80,13 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.categories-button {
+  background: none;
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 0px 6px;
 }
 
 .seller-other-cards {
