@@ -5,6 +5,7 @@
         <%= cl_image_tag order.listing.photo.key %>
       </div>
         <%= order.pickup_time.strftime("%b %e, %l:%M %p") %>
+        <p>Seller: <%= order.listing.user.first_name %></p>
       <p> </p>
     <% end %>
   </div>
