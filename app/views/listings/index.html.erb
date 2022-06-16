@@ -31,7 +31,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sort by Category</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Filter by Category</h5>
           </div>
             <div class="modal-body mx-auto">
               <div data-toggle-target="hideable" hidden class="toggled-filter">
@@ -44,7 +44,7 @@
                   </div>
                   <% end %>
                   <div class="d-felx justify-content-center">
-                    <%= f.submit class: "btn custom-btn", data: { search_target: "submitButton", bs_dismiss:"modal" } %>
+                    <%= f.submit class: "btn custom-btn", style: "margin-top: 16px; margin-bottom: 16px;", data: { search_target: "submitButton", bs_dismiss:"modal" } %>
                   </div>
                 <% end %>
               </div>
