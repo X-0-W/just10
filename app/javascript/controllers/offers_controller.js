@@ -6,7 +6,7 @@ export default class extends Controller {
 
   rejectOffer(event) {
     event.preventDefault();
-    const url = this.buttonTarget.href;
+    const url = event.currentTarget.href;
     fetch(url, {
       method: "PATCH",
       headers: { Accept: "text/plain", "X-CSRF-Token": csrfToken() }
