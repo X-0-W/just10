@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @listings = current_user.listings
+    @count = @listings.includes(:orders).where(orders: { status: "pending" }).group(:listings).size
     @orders = current_user.orders
     @user_wishlist_listings = current_user.favorited_listings
   end
