@@ -20,11 +20,7 @@ user_reiko.photo.attach(io: file, filename: "reiko.png", content_type: 'image/pn
 user_reiko.save!
 p "reiko seeded"
 
-user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "37 Lusher Rd, Croydon, VIC 3136", phone: "0421123456")
-file = URI.open('https://avatars.githubusercontent.com/u/37198517?v=4')
-user_callum.photo.attach(io: file, filename: "callum.png", content_type: 'image/png')
-user_callum.save!
-p "callum seeded"
+
 
 user_xander = User.create!(email: "xander@gmail.com", password: "testing", first_name: "Xander", last_name: "Wellingham", address: "38 Garnet Street, Brunswick, Vic 3056", phone: "0422123456")
 file = URI.open('https://avatars.githubusercontent.com/u/77281250?v=4')
@@ -210,6 +206,7 @@ p "13 seeded"
     end
   end
 end
+
 random_user = users.sample
 file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
 list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: random_user, address: random_user.address, tag_list: "Exercise")
@@ -269,21 +266,28 @@ lego = 'https://www.bigw.com.au/medias/sys_master/images/images/h4e/h57/10668855
 
 # test seeds:
 
-file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
-list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", user: user_callum, address: user_callum.address)
-list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
-list15.save!
-file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
-list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: user_callum, address: user_callum.address, tag_list: "Exercise")
-list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
-list14.save!
+# file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
+# list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", user: user_callum, address: user_callum.address)
+# list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
+# list15.save!
+# file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
+# list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: user_callum, address: user_callum.address, tag_list: "Exercise")
+# list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
+# list14.save!
 
-Order.create(listing: list15, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
-Order.create(listing: list15, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
-Order.create(listing: list15, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list15, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list15, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list15, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
 
-Order.create(listing: list14, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
-Order.create(listing: list14, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
-Order.create(listing: list14, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list14, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list14, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+# Order.create(listing: list14, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
 
-p "testing seeded"
+# p "testing seeded"
+
+# need an empty user for the presentation
+user_callum = User.create!(email: "callum@gmail.com", password: "testing", first_name: "Callum", last_name: "Middlemist", address: "37 Lusher Rd, Croydon, VIC 3136", phone: "0421123456")
+file = URI.open('https://avatars.githubusercontent.com/u/37198517?v=4')
+user_callum.photo.attach(io: file, filename: "callum.png", content_type: 'image/png')
+user_callum.save!
+p "callum seeded"

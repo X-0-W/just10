@@ -9,7 +9,7 @@
       <div>
         <%= listing.title %>
         <p>Pickup time: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
-        <p><%= order.user.first_name %></p>
+        <p>Buyer: <%= order.user.first_name %></p>
         <div class="btn btn-background-transparent">
           <% if current_user.chatroom_with(order.user).nil? %>
             <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post do %>
