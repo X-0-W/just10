@@ -1,6 +1,7 @@
 <div class="row flex-nowrap scrollable-card">
+
   <%# for each order, get listing and display listing %>
-  <% listings.each do |listing| %>
+  <% listings.pending.each do |listing| %>
     <div class="dashboard-card ms-2 me-2" style="width: 16rem">
       <%= link_to listing_orders_path(listing) do %>
         <div class="card dashboard-card-img ">

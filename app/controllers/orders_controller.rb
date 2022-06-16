@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
 
   def accept
     @order = Order.find(params[:id])
+    @order.listing.orders.where.not(id: @order).update(status: :declined)
     @order.accepted!
     @order.save
     redirect_to dashboard_path

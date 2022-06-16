@@ -3,7 +3,31 @@
   <tr>
   <% orders.each do |order| %>
     <% if order.status == "accepted" %>
-        <%= render "order_display", order: order %></td>
+      <th scope="col">
+        <div class="dashboard-card me-1 ms-1" style="width: 16rem">
+          <%= link_to order_path(order.id) do %>
+            <div class="card dashboard-card-img">
+              <%= cl_image_tag order.listing.photo.key %>
+            </div>
+              <%= order.listing.title %>
+            <p> </p>
+          <% end %>
+          <div class="btn btn-background-transparent">
+            <% if @chatroom.nil? %>
+              <%= link_to user_chatrooms_path(current_user, recipient_id: order.listing.user.id), method: :post do %>
+                <i class="far fa-comment"></i>
+              <% end %>
+            <% else %>
+              <%= link_to chatroom_path(@chatroom) do %>
+                <i class="far fa-comment"></i>
+              <% end %>
+            <% end %>
+          </div>
+          Message the seller
+        </div>
+
+      </th>
+
     <% end %>
   <% end %>
   </tr>

@@ -8,5 +8,4 @@ class Order < ApplicationRecord
   validates :user, uniqueness: { scope: :listing }
 
   enum status: { pending: 0, accepted: 1, completed: 2, declined: 3 }
-
 end
