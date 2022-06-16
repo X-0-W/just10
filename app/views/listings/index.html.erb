@@ -1,22 +1,28 @@
 <div data-controller="search" data-search-address-value="<%= params[:address] %>" class="">
   <div data-controller="toggle">
-    <div class="listings-headers d-flex justify-content-between mt-2 mx-2">
+    <div class="listings-headers d-flex justify-content-end mt-2 mx-2">
       <div class="d-flex justify-content-center">
-        <p> Within: </p>
-        <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; width: 42px; text-align: right">
+        <p> within</p>
+        <select data-search-target="distance" data-action="change->search#fetchListings" class="dropdown-distance" style="height: fit-content; margin: auto 5px; width: 42px; text-align: right; border-radius: 5px; height: 26px;">
           <option value="1">1</option>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20" selected>20</option>
           <option value="50">50</option>
         </select>
-        <p> km </p>
+        <p style="margin-right: 18px;"> km </p>
 
-        <div>
+        <%# Toggle Option 1 %>
+        <%# <div>
           <i class="fas fa-filter mx-3"
           data-action="click->toggle#toggleTargets"
           data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-        </div>
+        </div> %>
+
+        <button class="categories-button" data-action="click->toggle#toggleTargets"
+          data-bs-toggle="modal" data-bs-target="#exampleModal">
+          categories <i class="fas fa-caret-down"></i>
+        </button>
       </div>
     </div>
 
