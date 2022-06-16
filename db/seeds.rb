@@ -34,71 +34,71 @@ user_ethan.photo.attach(io: file, filename: "ethan.jpg", content_type: 'image/jp
 user_ethan.save!
 p "ethan seeded"
 
-user_julien = User.create!(email: "julienc@gmail.com", password: "testing", first_name: "Julien", last_name: "Chagnon", address: "9 Maffra St, Coolaroo VIC 3048", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/50136284?v=4')
-user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
-user_julien.save!
-p "julien seeded"
+# user_julien = User.create!(email: "julienc@gmail.com", password: "testing", first_name: "Julien", last_name: "Chagnon", address: "9 Maffra St, Coolaroo VIC 3048", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/50136284?v=4')
+# user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
+# user_julien.save!
+# p "julien seeded"
 
-user_neil = User.create!(email: "neil@gmail.com", password: "testing", first_name: "Neil", last_name: "Chen", address: "Bennelong Point, Sydney NSW 2000", phone: "0423123456")
-file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1650542650/pr9pvkvqj6nversopejr.jpg')
-user_neil.photo.attach(io: file, filename: "neil.jpg", content_type: 'image/jpg')
-user_neil.save!
-p "neil seeded"
+# user_neil = User.create!(email: "neil@gmail.com", password: "testing", first_name: "Neil", last_name: "Chen", address: "Bennelong Point, Sydney NSW 2000", phone: "0423123456")
+# file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1650542650/pr9pvkvqj6nversopejr.jpg')
+# user_neil.photo.attach(io: file, filename: "neil.jpg", content_type: 'image/jpg')
+# user_neil.save!
+# p "neil seeded"
 
-user_aren = User.create!(email: "aren@gmail.com", password: "testing", first_name: "Aren", last_name: "Clissold", address: "18 Irving St, Footscray VIC 3011", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/72479887?v=4')
-user_aren.photo.attach(io: file, filename: "aren.jpg", content_type: 'image/jpg')
-user_aren.save!
-p "aren seeded"
+# user_aren = User.create!(email: "aren@gmail.com", password: "testing", first_name: "Aren", last_name: "Clissold", address: "18 Irving St, Footscray VIC 3011", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/72479887?v=4')
+# user_aren.photo.attach(io: file, filename: "aren.jpg", content_type: 'image/jpg')
+# user_aren.save!
+# p "aren seeded"
 
-user_shannon = User.create!(email: "shannon@gmail.com", password: "testing", first_name: "Shannon", last_name: "Gordon", address: "25 McCarthy Rd, Monbulk VIC 3793", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/94883494?v=4')
-user_shannon.photo.attach(io: file, filename: "shannon.jpg", content_type: 'image/jpg')
-user_shannon.save!
-p "shannon seeded"
+# user_shannon = User.create!(email: "shannon@gmail.com", password: "testing", first_name: "Shannon", last_name: "Gordon", address: "25 McCarthy Rd, Monbulk VIC 3793", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/94883494?v=4')
+# user_shannon.photo.attach(io: file, filename: "shannon.jpg", content_type: 'image/jpg')
+# user_shannon.save!
+# p "shannon seeded"
 
-user_yujia = User.create!(email: "yujia@gmail.com", password: "testing", first_name: "Yujia", last_name: "Gu", address: "North Terrace, Adelaide SA 5000", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/96090501?v=4')
-user_yujia.photo.attach(io: file, filename: "yujia.jpg", content_type: 'image/jpg')
-user_yujia.save!
-p "yujia seeded"
+# user_yujia = User.create!(email: "yujia@gmail.com", password: "testing", first_name: "Yujia", last_name: "Gu", address: "North Terrace, Adelaide SA 5000", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/96090501?v=4')
+# user_yujia.photo.attach(io: file, filename: "yujia.jpg", content_type: 'image/jpg')
+# user_yujia.save!
+# p "yujia seeded"
 
-user_Yaron = User.create!(email: "Yaron@gmail.com", password: "testing", first_name: "Yaron", last_name: "Kraushar", address: "100 Shiralee Rd, Orange NSW 2800", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/65701682?v=4')
-user_Yaron.photo.attach(io: file, filename: "Yaron.jpg", content_type: 'image/jpg')
-user_Yaron.save!
-p "Yaron seeded"
+# user_Yaron = User.create!(email: "Yaron@gmail.com", password: "testing", first_name: "Yaron", last_name: "Kraushar", address: "100 Shiralee Rd, Orange NSW 2800", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/65701682?v=4')
+# user_Yaron.photo.attach(io: file, filename: "Yaron.jpg", content_type: 'image/jpg')
+# user_Yaron.save!
+# p "Yaron seeded"
 
-user_leah = User.create!(email: "leah@gmail.com", password: "testing", first_name: "Leah", last_name: "Moesch", address: "99 Rose St, Fitzroy VIC 3065", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/102561039?v=4')
-user_leah.photo.attach(io: file, filename: "leah.jpg", content_type: 'image/jpg')
-user_leah.save!
-p "leah seeded"
+# user_leah = User.create!(email: "leah@gmail.com", password: "testing", first_name: "Leah", last_name: "Moesch", address: "99 Rose St, Fitzroy VIC 3065", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/102561039?v=4')
+# user_leah.photo.attach(io: file, filename: "leah.jpg", content_type: 'image/jpg')
+# user_leah.save!
+# p "leah seeded"
 
-user_kevin = User.create!(email: "kevin@gmail.com", password: "testing", first_name: "Kevin", last_name: "Nguyen", address: "162 Somerville Rd, Yarraville VIC 3013", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/49255634?v=4')
-user_kevin.photo.attach(io: file, filename: "kevin.jpg", content_type: 'image/jpg')
-user_kevin.save!
-p "kevin seeded"
+# user_kevin = User.create!(email: "kevin@gmail.com", password: "testing", first_name: "Kevin", last_name: "Nguyen", address: "162 Somerville Rd, Yarraville VIC 3013", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/49255634?v=4')
+# user_kevin.photo.attach(io: file, filename: "kevin.jpg", content_type: 'image/jpg')
+# user_kevin.save!
+# p "kevin seeded"
 
-user_julien = User.create!(email: "julienv@gmail.com", password: "testing", first_name: "julien", last_name: "Voraz", address: "17 Progress St, Dandenong South VIC 3175", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/102274282?v=4')
-user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
-user_julien.save!
-p "julien seeded"
+# user_julien = User.create!(email: "julienv@gmail.com", password: "testing", first_name: "julien", last_name: "Voraz", address: "17 Progress St, Dandenong South VIC 3175", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/102274282?v=4')
+# user_julien.photo.attach(io: file, filename: "julien.jpg", content_type: 'image/jpg')
+# user_julien.save!
+# p "julien seeded"
 
-user_hayden = User.create!(email: "hayden@gmail.com", password: "testing", first_name: "Hayden", last_name: "Walker", address: "136 Weston St, Brunswick East VIC 3057", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/62589313?v=4')
-user_hayden.photo.attach(io: file, filename: "hayden.jpg", content_type: 'image/jpg')
-user_hayden.save!
-p "hayden seeded"
+# user_hayden = User.create!(email: "hayden@gmail.com", password: "testing", first_name: "Hayden", last_name: "Walker", address: "136 Weston St, Brunswick East VIC 3057", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/62589313?v=4')
+# user_hayden.photo.attach(io: file, filename: "hayden.jpg", content_type: 'image/jpg')
+# user_hayden.save!
+# p "hayden seeded"
 
-user_caz = User.create!(email: "caz@gmail.com", password: "testing", first_name: "Caz", last_name: "Wong", address: "Mount Buller Tourists Road, Mirimbah VIC 3722", phone: "0423123456")
-file = URI.open('https://avatars.githubusercontent.com/u/102901545?v=4')
-user_caz.photo.attach(io: file, filename: "caz.jpg", content_type: 'image/jpg')
-user_caz.save!
-p "caz seeded"
+# user_caz = User.create!(email: "caz@gmail.com", password: "testing", first_name: "Caz", last_name: "Wong", address: "Mount Buller Tourists Road, Mirimbah VIC 3722", phone: "0423123456")
+# file = URI.open('https://avatars.githubusercontent.com/u/102901545?v=4')
+# user_caz.photo.attach(io: file, filename: "caz.jpg", content_type: 'image/jpg')
+# user_caz.save!
+# p "caz seeded"
 
 users = User.all
 

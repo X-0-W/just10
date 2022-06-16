@@ -2,8 +2,8 @@
 
   <%# for each order, get listing and display listing %>
   <% last_listing = "1"  %>
-  <% listings.pending.each do |listing| %>
-    <% if listing != last_listing %>
+  <% listings.each do |listing| %>
+    <% if listing.orders.where(status: 'pending').count > 0 %>
       <div class="dashboard-card ms-2 me-2" style="width: 16rem">
         <%= link_to listing_orders_path(listing) do %>
           <div class="card dashboard-card-img ">
