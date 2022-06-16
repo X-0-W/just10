@@ -236,6 +236,8 @@ p "Review seeded"
 
 p "seed completed"
 
+# ignore - possible seed items
+
 salt_lamp = 'https://i.ebayimg.com/images/g/jQoAAOSwS7RhBWZX/s-l500.jpg'
 lava_lamp = 'https://i.ebayimg.com/images/g/YWUAAOSw9SJdA0BF/s-l500.jpg'
 pot = 'https://i.ebayimg.com/thumbs/images/g/tvUAAOSwpqJingpX/s-l225.webp'

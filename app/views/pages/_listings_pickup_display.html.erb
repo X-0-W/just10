@@ -6,22 +6,19 @@
       <div class="card dashboard-card-img ">
         <%= cl_image_tag listing.photo.key %>
       </div>
-      <div>
+      <div class="dashboard-card-text">
         <%= listing.title %>
-        <p>Pickup time: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
-        <p>Buyer: <%= order.user.first_name %></p>
-        <div class="btn btn-background-transparent">
-          <% if current_user.chatroom_with(order.user).nil? %>
-            <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post do %>
-              <i class="far fa-comment"></i>
-            <% end %>
-          <% else %>
-            <%= link_to chatroom_path(current_user.chatroom_with(order.user)) do %>
-              <i class="far fa-comment"></i>
-            <% end %>
+        <p class="fw-bold">Pickup: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %> </p>
+        <%= cl_image_tag order.user.photo.key, class: "avatar" %>
+        <% if current_user.chatroom_with(order.user).nil? %>
+          <%= link_to user_chatrooms_path(current_user, recipient_id: order.user.id), method: :post, class: "dashboard-card-message" do %>
+            <i class="far fa-comment"></i>
           <% end %>
-        </div>
-        Message the buyer
+        <% else %>
+          <%= link_to chatroom_path(current_user.chatroom_with(order.user)), class: "dashboard-card-message" do %>
+            <i class="far fa-comment"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>

@@ -4,27 +4,31 @@
   <% orders.each do |order| %>
     <% if order.status == "accepted" %>
       <th scope="col">
+        
         <div class="dashboard-card me-1 ms-1" style="width: 16rem">
+          
           <%= link_to order_path(order.id) do %>
             <div class="card dashboard-card-img">
               <%= cl_image_tag order.listing.photo.key %>
             </div>
-              <%= order.listing.title %>
-            <p> </p>
           <% end %>
-          <p>Seller: <%= order.listing.user.first_name %></p>
-          <div class="btn btn-background-transparent">
+          
+          <div class="dashboard-card-text">
+            <p><%= order.listing.title %></p>
+            <p class="fw-bold">Pickup: <%= order.pickup_time.strftime("%b %e, %l:%M %p") %></p>
+            <!-- <p>Message <%#= order.listing.user.first_name %></p> -->
             <% if current_user.chatroom_with(order.listing.user).nil? %>
-              <%= link_to user_chatrooms_path(current_user, recipient_id: order.listing.user.id), method: :post do %>
+              <%= link_to user_chatrooms_path(current_user, recipient_id: order.listing.user.id), method: :post, class: "dashboard-card-message" do %>
                 <i class="far fa-comment"></i>
               <% end %>
             <% else %>
-              <%= link_to chatroom_path(current_user.chatroom_with(order.listing.user)) do %>
+              <%= link_to chatroom_path(current_user.chatroom_with(order.listing.user)), class: "dashboard-card-message" do %>
                 <i class="far fa-comment"></i>
               <% end %>
             <% end %>
+            <%= cl_image_tag order.listing.user.photo.key, class: "avatar" %>
           </div>
-          Message the seller
+          
         </div>
 
       </th>

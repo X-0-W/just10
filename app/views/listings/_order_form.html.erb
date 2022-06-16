@@ -3,7 +3,7 @@
       <%= f.input :pickup_time, as: :string, require: false, input_html: { data: {controller: "flatpicker"}}, label: false, placeholder: "Choose your pickup time" %>
       <div class="d-flex justify-content-between">
 
-        <%= f.submit class: "btn btn-primary flex-grow-1", value: "Purchase" %>
+        <%= f.submit class: "btn custom-btn flex-grow-1", value: "Purchase" %>
         <% unless listing.user == current_user %>
           <div class="btn btn-background-transparent shadow border border-light">
             <% if @chatroom.nil? %>
