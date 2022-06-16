@@ -11,7 +11,7 @@
           </div>
           <div>
             <%= listing.title %>
-            <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
+            <p style="font-weight: 600; margin: 0;" > Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
           </div>
         <% end %>
         <div class="me-3"></div>

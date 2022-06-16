@@ -5,10 +5,14 @@
     <% if order.status == "pending" %>
       <th scope="col">
         <div class="dashboard-card me-1 ms-1" style="width: 16rem">
-          <div class="card dashboard-card-img">
-            <%= cl_image_tag order.listing.photo.key %>
-          </div>
+
+          <%= link_to order_path(order.id) do %>
+            <div class="card dashboard-card-img">
+              <%= cl_image_tag order.listing.photo.key %>
+            </div>
             <%= order.listing.title %>
+            <p style="font-weight: 400;"> Status: <%= order.status %></p>
+          <% end %>
           <p>Seller: <%= order.listing.user.first_name %></p>
         </div>
       </th>

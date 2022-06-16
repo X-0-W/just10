@@ -8,87 +8,13 @@
           <%= f.text_field :address, placeholder: 'Enter address', data: { geocoder_target: "address" }, class: "d-none" %>
         </div>
         <div class="text-center">
-          <%= f.submit 'Search', class: "btn custom-btn my-2" %>
+          <%= f.submit 'Search', class: "w-100 btn custom-btn my-2" %>
         </div>
       </div>
     <% end %>
   </div>
 
-  <div class="scroll-left">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-right">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-left">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="scroll-right">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-left">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="scroll-right">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% @listings.first(15).each do |listing| %>
-            <div class="home-card">
-                <%= image_tag listing.photo, crop: :fill, size: 80 %>
-            </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-</div>
+  <%= render "pages/home_photos" %>
 
 
 <%# form_tag listings_path, method: :get do %>

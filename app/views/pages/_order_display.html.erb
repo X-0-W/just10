@@ -4,6 +4,7 @@
       <div class="card dashboard-card-img">
         <%= cl_image_tag order.listing.photo.key %>
       </div>
+      <p> <%= order.listing.title %></p>
         <%= order.pickup_time.strftime("%b %e, %l:%M %p") %>
         <p>Seller: <%= order.listing.user.first_name %></p>
       <p> </p>
