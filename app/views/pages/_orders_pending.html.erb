@@ -13,8 +13,7 @@
             <%= order.listing.title %>
             <p style="font-weight: 400;"> Status: <%= order.status %></p>
           <% end %>
-          
-          <p>Seller: <%= order.user.first_name %></p>
+          <p>Seller: <%= order.listing.user.first_name %></p>
         </div>
       </th>
     <% end %>
