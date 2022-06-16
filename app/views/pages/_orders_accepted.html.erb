@@ -12,6 +12,7 @@
               <%= order.listing.title %>
             <p> </p>
           <% end %>
+          <p>Seller: <%= order.listing.user.first_name %></p>
           <div class="btn btn-background-transparent">
             <% if current_user.chatroom_with(order.listing.user).nil? %>
               <%= link_to user_chatrooms_path(current_user, recipient_id: order.listing.user.id), method: :post do %>
