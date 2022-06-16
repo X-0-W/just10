@@ -11,5 +11,5 @@ class ChatroomsController < ApplicationController
     ChatroomUser.create(user: @recipient, chatroom: @chatroom)
     redirect_to @chatroom
   end
-  
+
 end
