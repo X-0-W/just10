@@ -9,9 +9,10 @@
           <div class="card dashboard-card-img ">
             <%= cl_image_tag listing.photo.key %>
           </div>
-          <div>
-            <p style="font-weight: 600; margin: 0;"> <%= listing.title %> </p>
-            <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
+          <div class="dashboard-card-text">
+            <%= listing.title %>
+            <p style="font-weight: 600; margin: 0" > Pending requests: <%= listing.orders.where(status: 'pending').count %></p>
+            <i class="fas fa-solid fa-caret-right arrow-right"></i>
           </div>
         <% end %>
         <div class="me-3"></div>

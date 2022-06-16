@@ -20,11 +20,12 @@
                 <% end %>
               </div>
             </div>
-            <div class="buttons-response d-flex justify-content-between">
-              <%= link_to accept_order_path(order), method: :patch, class: "btn custom-btn half-width left" do %>
+
+            <div class="buttons-response d-flex justify-content-between text-center pt-1">
+              <%= link_to accept_order_path(order), method: :patch, class: "half-width text-success left" do %>
                 <i class="fas fa-check"></i>
               <% end %>
-              <%= link_to reject_order_path(order), class: "btn btn-primary half-width right", data: { offers_target: "button", action: "click->offers#rejectOffer" } do %>
+              <%= link_to reject_order_path(order), class: "half-width text-danger right", data: { offers_target: "button", action: "click->offers#rejectOffer" } do %>
                 <i class="fas fa-times"></i>
               <% end %>
             </div>

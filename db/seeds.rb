@@ -210,6 +210,7 @@ p "13 seeded"
     end
   end
 end
+
 random_user = users.sample
 file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
 list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: random_user, address: random_user.address, tag_list: "Exercise")
@@ -238,6 +239,8 @@ list15.save!
 p "Review seeded"
 
 p "seed completed"
+
+# ignore - possible seed items
 
 salt_lamp = 'https://i.ebayimg.com/images/g/jQoAAOSwS7RhBWZX/s-l500.jpg'
 lava_lamp = 'https://i.ebayimg.com/images/g/YWUAAOSw9SJdA0BF/s-l500.jpg'
