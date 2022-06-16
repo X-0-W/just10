@@ -22,10 +22,13 @@
       <% if user_signed_in? && params[:action] == "home" %>
         <%= "Welcome back #{current_user.first_name}"%>
       <% else %>
-        <%= "Just $10" %>
+        <div id="navbar-banner">
+          <%= image_tag "just_10_nav.png", height: 40, width: 150, crop: 'fill' %>
+        </div>
       <% end %>
     </div>
-    <%= image_tag "navbar_dropdown_old.png", size: 40 %>
+    <div></div>
+    <%# image_tag "navbar_dropdown_old.png", size: 40 %>
     <%# <div class = "nav-item navbar-logo">
       <p>Just $10</p>
     </div> %>

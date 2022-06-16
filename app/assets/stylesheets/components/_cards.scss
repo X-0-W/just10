@@ -1,15 +1,15 @@
 .cards {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 5px;
-  // margin: 5px;
-  // margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  margin: 5px;
+  margin-top: 60px;
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  align-self: center;
-  justify-content: space-around;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 5px;
+//   align-self: center;
+//   justify-content: space-around;
 }
 
 .card {
@@ -25,10 +25,6 @@
 
     &:active {
       transform: scale(1.05);
-    }
-
-    &:nth-child(0) {
-      grid-area: 1 / 1 / 2 / 3;
     }
   }
 }
