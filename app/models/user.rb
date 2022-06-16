@@ -26,4 +26,9 @@ class User < ApplicationRecord
   def notifications_count
     seller_orders.where(status: :pending).count + orders.where(status: :accepted).count
   end
+
+  def chatroom_with(other_user)
+    @chatroom ||= Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: other_user.id})
+    .merge(Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: id})).first
+  end
 end

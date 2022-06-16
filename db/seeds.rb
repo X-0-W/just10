@@ -197,12 +197,6 @@ list13.photo.attach(io: file, filename: "woodenRockingChair.png", content_type: 
 list13.save!
 p "13 seeded"
 
-random_user = users.sample
-file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
-list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: random_user, address: random_user.address, tag_list: "Exercise")
-list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
-list14.save!
-p "14 seeded"
 
 # assigns an order to a random user for each listing
 1.times do
@@ -216,6 +210,12 @@ p "14 seeded"
     end
   end
 end
+random_user = users.sample
+file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
+list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: random_user, address: random_user.address, tag_list: "Exercise")
+list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
+list14.save!
+p "14 seeded"
 
 p "Orders seeded"
 
@@ -224,8 +224,8 @@ list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", use
 list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
 list15.save!
 
-Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
-Review.create(order: Order.last, approval: true)
+# Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
+# Review.create(order: Order.last, approval: true)
 p "Review seeded"
 
 file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
@@ -233,8 +233,8 @@ list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", use
 list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
 list15.save!
 
-Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
-Review.create(order: Order.last, approval: false)
+# Order.create(listing: Listing.last, user: user_callum, pickup_time: DateTime.now, status: 2)
+# Review.create(order: Order.last, approval: false)
 p "Review seeded"
 
 p "seed completed"
@@ -265,3 +265,25 @@ outdoor_chairs = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_
 outdoor_table = 'https://media.nisbets.com/asset/core/prodimage/large_new/u422_primary.jpg'
 baby_walker = 'https://images.unsplash.com/photo-1599082779777-8edeb377cdef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
 lego = 'https://www.bigw.com.au/medias/sys_master/images/images/h4e/h57/10668855623710.jpg'
+
+
+# test seeds:
+
+file = URI.open('https://static.wixstatic.com/media/a55d63_51410a46cedb4ce1b9bc9491bd041eb8~mv2.jpeg/v1/fill/w_400,h_278,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Garden%20Soil.jpeg')
+list15 = Listing.new(title: "rocks", collection_instruction: "bag of rocks", user: user_callum, address: user_callum.address)
+list15.photo.attach(io: file, filename: "rocks.png", content_type: 'image/png')
+list15.save!
+file = URI.open('https://images.unsplash.com/photo-1533859401019-c5edb7a798ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80')
+list14 = Listing.new(title: "Old broken bike", collection_instruction: "Bike doesn't work, will leave on the front porch", user: user_callum, address: user_callum.address, tag_list: "Exercise")
+list14.photo.attach(io: file, filename: "oldBrokenBike.png", content_type: 'image/png')
+list14.save!
+
+Order.create(listing: list15, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+Order.create(listing: list15, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+Order.create(listing: list15, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+
+Order.create(listing: list14, user: user_xander, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+Order.create(listing: list14, user: user_reiko, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+Order.create(listing: list14, user: user_aren, pickup_time: DateTime.new(2022, 2, 3, 4, 5, 6))
+
+p "testing seeded"
