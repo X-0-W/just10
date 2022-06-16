@@ -29,6 +29,6 @@ class User < ApplicationRecord
 
   def chatroom_with(other_user)
     @chatroom ||= Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: other_user.id})
-    .merge(Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: id})).first
+    .and(Chatroom.joins(:chatroom_users).where(chatroom_users:{user_id: id})).first
   end
 end

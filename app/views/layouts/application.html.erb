@@ -28,6 +28,12 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <%= favicon_link_tag %>
+    <style>
+    .user-<%= current_user&.id %> #message-content span{
+      text-align: right;
+      background: rgba(60, 169, 144, 0.8);
+    }
+    </style>
   </head>
 
   <body>
