@@ -5,11 +5,13 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.create
     @recipient = User.find(params[:recipient_id])
-    ChatroomUser.create(user: current_user, chatroom: @chatroom)
-    ChatroomUser.create(user: @recipient, chatroom: @chatroom)
+    test = @chatroom = current_user.chatroom_with(@recipient)
+    unless test
+      @chatroom = Chatroom.create
+      ChatroomUser.create(user: current_user, chatroom: @chatroom)
+      ChatroomUser.create(user: @recipient, chatroom: @chatroom)
+    end
     redirect_to @chatroom
   end
-
 end
