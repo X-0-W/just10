@@ -6,8 +6,6 @@
     <% if order.status == "pending" %>
       <th scope="col">
         <div class="dashboard-card me-1 ms-1" style="width: 16rem">
-
-          <%= link_to order_path(order.id) do %>
             <div class="card dashboard-card-img">
               <%= cl_image_tag order.listing.photo.key %>
             </div>
@@ -16,7 +14,6 @@
               <p class="fst-italic">Awaiting response from <%= order.listing.user.first_name.capitalize %></p>
               <%= cl_image_tag order.listing.user.photo.key, class: "avatar" %>
             </div>
-          <% end %>
         </div>
       </th>
       <% i += 1 %>
