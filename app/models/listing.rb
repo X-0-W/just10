@@ -7,7 +7,7 @@ class Listing < ApplicationRecord
   validates :title, :user_id, :collection_instruction, :photo, :address, presence: true
   validates :collection_instruction, length: { maximum: 500 }
 
-  scope :active, -> { includes(:orders).where.not(orders: { status: :completed }) }
+  scope :active, -> { left_joins(:orders).where.not(orders: { status: :completed }).or(left_joins(:orders).where(orders: { status: nil }) )}
   scope :pending, -> { left_joins(:orders).where(orders: { status: [:pending, nil] }) }
 
   has_one_attached :photo
