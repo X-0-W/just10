@@ -1,4 +1,5 @@
 <%# <%= image_tag "https://source.unsplash.com/random/80x80/?homeware=#{i}", crop: :fill, size: 80 %>
+<%# test %>
 
 <div class="scroll-left">
   <div class="inner">
@@ -88,14 +89,14 @@
   <div class="inner">
     <div class="scroll-cards">
     <% m = 12 %>
-      <% 6.times do |i| %>
+      <% 6.times do |m| %>
         <div class="home-card">
           <%= image_tag "home#{i}.jpg", crop: :fill, size: 80 %>
           <% i += 1 %>
         </div>
       <% end %>
       <% n = 12 %>
-        <% 4.times do |j| %>
+        <% 4.times do |n| %>
           <div class="home-card">
             <%= image_tag "home#{j}.jpg", crop: :fill, size: 80 %>
             <% j += 1 %>
@@ -109,14 +110,14 @@
   <div class="inner">
     <div class="scroll-cards">
       <% o = 18 %>
-        <% 6.times do |k| %>
+        <% 6.times do |o| %>
           <div class="home-card">
               <%= image_tag "home#{k}.jpg", crop: :fill, size: 80 %>
               <% k += 1 %>
           </div>
         <% end %>
       <% p = 18 %>
-        <% 4.times do |l| %>
+        <% 4.times do |p| %>
           <div class="home-card">
             <%= image_tag "home#{l}.jpg", crop: :fill, size: 80 %>
             <% l += 1 %>
