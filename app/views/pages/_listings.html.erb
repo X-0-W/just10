@@ -1,22 +1,26 @@
 <div class="row flex-nowrap scrollable-card">
 
   <%# for each order, get listing and display listing %>
-  <% last_listing = "1"  %>
-  <% listings.pending.each do |listing| %>
-    <% if listing != last_listing %>
-      <div class="dashboard-card ms-2 me-2" style="width: 16rem">
-        <%= link_to listing_orders_path(listing) do %>
-          <div class="card dashboard-card-img ">
-            <%= cl_image_tag listing.photo.key %>
-          </div>
-          <div>
-            <p style="font-weight: 600; margin: 0;"> <%= listing.title %> </p>
-            <p> Pending order requests: <%= listing.orders.where(status: 'pending').count %> </p>
-          </div>
-        <% end %>
-        <div class="me-3"></div>
-      </div>
+  <% i = 0 %>
+    <% listings.each do |listing| %>
+      <% if listing.orders.where(status: 'pending').count > 0 %>
+        <div class="dashboard-card ms-2 me-2" style="width: 16rem">
+          <%= link_to listing_orders_path(listing) do %>
+            <div class="card dashboard-card-img ">
+              <%= cl_image_tag listing.photo.key %>
+            </div>
+            <div class="dashboard-card-text">
+              <%= listing.title %>
+              <p style="font-weight: 600; margin: 0" > Pending requests: <%= listing.orders.where(status: 'pending').count %></p>
+              <i class="fas fa-solid fa-caret-right arrow-right"></i>
+            </div>
+          <% end %>
+          <div class="me-3"></div>
+        </div>
+        <% i += 1 %>
     <% end %>
-    <% last_listing = listing %>
+  <% end %>
+  <% if i.zero? %>
+    <p><em>No pending requests</em></p>
   <% end %>
 </div>

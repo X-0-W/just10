@@ -1,6 +1,6 @@
 <div class="container chatroom" data-controller="chatroom-subscription"
 data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <div><h3> Chat with <%= @chatroom.users.where.not(id: current_user).first.first_name %></h3></div>
+  <div id="message-name"><h3> Chat with <%= @chatroom.users.where.not(id: current_user).first.first_name %> <i class="fas fa-comment"></i> </h3></div>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
