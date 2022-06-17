@@ -44,12 +44,6 @@ p "ethan seeded"
 # user_neil.save!
 # p "neil seeded"
 
-# user_aren = User.create!(email: "aren@gmail.com", password: "testing", first_name: "Aren", last_name: "Clissold", address: "18 Irving St, Footscray VIC 3011", phone: "0423123456")
-# file = URI.open('https://avatars.githubusercontent.com/u/72479887?v=4')
-# user_aren.photo.attach(io: file, filename: "aren.jpg", content_type: 'image/jpg')
-# user_aren.save!
-# p "aren seeded"
-
 # user_shannon = User.create!(email: "shannon@gmail.com", password: "testing", first_name: "Shannon", last_name: "Gordon", address: "25 McCarthy Rd, Monbulk VIC 3793", phone: "0423123456")
 # file = URI.open('https://avatars.githubusercontent.com/u/94883494?v=4')
 # user_shannon.photo.attach(io: file, filename: "shannon.jpg", content_type: 'image/jpg')
@@ -68,12 +62,6 @@ p "ethan seeded"
 # user_Yaron.save!
 # p "Yaron seeded"
 
-# user_leah = User.create!(email: "leah@gmail.com", password: "testing", first_name: "Leah", last_name: "Moesch", address: "99 Rose St, Fitzroy VIC 3065", phone: "0423123456")
-# file = URI.open('https://avatars.githubusercontent.com/u/102561039?v=4')
-# user_leah.photo.attach(io: file, filename: "leah.jpg", content_type: 'image/jpg')
-# user_leah.save!
-# p "leah seeded"
-
 # user_kevin = User.create!(email: "kevin@gmail.com", password: "testing", first_name: "Kevin", last_name: "Nguyen", address: "162 Somerville Rd, Yarraville VIC 3013", phone: "0423123456")
 # file = URI.open('https://avatars.githubusercontent.com/u/49255634?v=4')
 # user_kevin.photo.attach(io: file, filename: "kevin.jpg", content_type: 'image/jpg')
@@ -86,17 +74,29 @@ p "ethan seeded"
 # user_julien.save!
 # p "julien seeded"
 
-# user_hayden = User.create!(email: "hayden@gmail.com", password: "testing", first_name: "Hayden", last_name: "Walker", address: "136 Weston St, Brunswick East VIC 3057", phone: "0423123456")
-# file = URI.open('https://avatars.githubusercontent.com/u/62589313?v=4')
-# user_hayden.photo.attach(io: file, filename: "hayden.jpg", content_type: 'image/jpg')
-# user_hayden.save!
-# p "hayden seeded"
-
 # user_caz = User.create!(email: "caz@gmail.com", password: "testing", first_name: "Caz", last_name: "Wong", address: "Mount Buller Tourists Road, Mirimbah VIC 3722", phone: "0423123456")
 # file = URI.open('https://avatars.githubusercontent.com/u/102901545?v=4')
 # user_caz.photo.attach(io: file, filename: "caz.jpg", content_type: 'image/jpg')
 # user_caz.save!
 # p "caz seeded"
+
+user_aren = User.create!(email: "aren@gmail.com", password: "testing", first_name: "Aren", last_name: "Clissold", address: "18 Irving St, Footscray VIC 3011", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/72479887?v=4')
+user_aren.photo.attach(io: file, filename: "aren.jpg", content_type: 'image/jpg')
+user_aren.save!
+p "aren seeded"
+
+user_leah = User.create!(email: "leah@gmail.com", password: "testing", first_name: "Leah", last_name: "Moesch", address: "99 Rose St, Fitzroy VIC 3065", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/102561039?v=4')
+user_leah.photo.attach(io: file, filename: "leah.jpg", content_type: 'image/jpg')
+user_leah.save!
+p "leah seeded"
+
+user_hayden = User.create!(email: "hayden@gmail.com", password: "testing", first_name: "Hayden", last_name: "Walker", address: "136 Weston St, Brunswick East VIC 3057", phone: "0423123456")
+file = URI.open('https://avatars.githubusercontent.com/u/62589313?v=4')
+user_hayden.photo.attach(io: file, filename: "hayden.jpg", content_type: 'image/jpg')
+user_hayden.save!
+p "hayden seeded"
 
 users = User.all
 
@@ -158,14 +158,14 @@ p "8 seeded"
 
 random_user = users.sample
 file = URI.open('https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F10%2Fbored-ape-yacht-club-nft-3-4-million-record-sothebys-metaverse-0.jpg?w=960&cbr=1&q=90&fit=max')
-list9 = Listing.new(title: "digital cartoon of ape", collection_instruction: "I'll print it for you when you get here'", user: random_user, address: random_user.address, tag_list: "Decoration")
+list9 = Listing.new(title: "digital cartoon of ape", collection_instruction: "I'll print it for you when you get here'", user: user_xander, address: user_xander.address, tag_list: "Decoration")
 list9.photo.attach(io: file, filename: "cartoon.jpg", content_type: 'image/jpg')
 list9.save!
 p "9 seeded"
 
 random_user = users.sample
 file = URI.open('https://images.unsplash.com/photo-1610847499832-918a1c3c6811?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80')
-list10 = Listing.new(title: "A photo of a Ferrari", collection_instruction: "Not a real Ferrari, just a photo for just $10! I will leave it on the driveway of my house.", user: random_user, address: random_user.address,tag_list: "Decoration")
+list10 = Listing.new(title: "A photo of a Ferrari", collection_instruction: "Not a real Ferrari, just a photo for just $10! I will leave it on doorway of my house.", user: user_xander, address: user_xander.address,tag_list: "Decoration")
 list10.photo.attach(io: file, filename: "ferrari.png.png", content_type: 'image/png')
 list10.save!
 p "10 seeded"
