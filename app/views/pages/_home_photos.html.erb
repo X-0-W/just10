@@ -1,46 +1,127 @@
 <%# <%= image_tag "https://source.unsplash.com/random/80x80/?homeware=#{i}", crop: :fill, size: 80 %>
 
-<% i = 0 %>
-<% j = 0 %>
-<% k = 10 %>
-<% l = 10 %>
-
-<% 3.times do %>
-  <div class="scroll-left">
-    <div class="inner">
-      <div class="scroll-cards">
-        <% 6.times do |i| %>
-          <div class="home-card">
-            <%= image_tag "home#{i}.jpg", crop: :fill, size: 80 %>
-            <% i += 1 %>
-          </div>
-        <% end %>
+<div class="scroll-left">
+  <div class="inner">
+    <div class="scroll-cards">
+    <% i = 0 %>
+      <% 6.times do |i| %>
+        <div class="home-card">
+          <%= image_tag "home#{i}.jpg", crop: :fill, size: 80 %>
+          <% i += 1 %>
+        </div>
+      <% end %>
+      <% j = 0 %>
         <% 4.times do |j| %>
           <div class="home-card">
             <%= image_tag "home#{j}.jpg", crop: :fill, size: 80 %>
             <% j += 1 %>
           </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
 
-  <div class="scroll-right">
-    <div class="inner">
-      <div class="scroll-cards">
+<div class="scroll-right">
+  <div class="inner">
+    <div class="scroll-cards">
+      <% k = 5 %>
         <% 6.times do |k| %>
           <div class="home-card">
               <%= image_tag "home#{k}.jpg", crop: :fill, size: 80 %>
               <% k += 1 %>
           </div>
         <% end %>
+      <% l = 5 %>
         <% 4.times do |l| %>
           <div class="home-card">
             <%= image_tag "home#{l}.jpg", crop: :fill, size: 80 %>
             <% l += 1 %>
           </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
+
+<div class="scroll-left">
+  <div class="inner">
+    <div class="scroll-cards">
+    <% i = 0 %>
+      <% 6.times do |i| %>
+        <div class="home-card">
+          <%= image_tag "home#{i}.jpg", crop: :fill, size: 80 %>
+          <% i += 1 %>
+        </div>
+      <% end %>
+      <% j = 0 %>
+        <% 4.times do |j| %>
+          <div class="home-card">
+            <%= image_tag "home#{j}.jpg", crop: :fill, size: 80 %>
+            <% j += 1 %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-right">
+  <div class="inner">
+    <div class="scroll-cards">
+      <% k = 5 %>
+        <% 6.times do |k| %>
+          <div class="home-card">
+              <%= image_tag "home#{k}.jpg", crop: :fill, size: 80 %>
+              <% k += 1 %>
+          </div>
+        <% end %>
+      <% l = 5 %>
+        <% 4.times do |l| %>
+          <div class="home-card">
+            <%= image_tag "home#{l}.jpg", crop: :fill, size: 80 %>
+            <% l += 1 %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-left">
+  <div class="inner">
+    <div class="scroll-cards">
+    <% m = 12 %>
+      <% 6.times do |i| %>
+        <div class="home-card">
+          <%= image_tag "home#{i}.jpg", crop: :fill, size: 80 %>
+          <% i += 1 %>
+        </div>
+      <% end %>
+      <% n = 12 %>
+        <% 4.times do |j| %>
+          <div class="home-card">
+            <%= image_tag "home#{j}.jpg", crop: :fill, size: 80 %>
+            <% j += 1 %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-right">
+  <div class="inner">
+    <div class="scroll-cards">
+      <% o = 18 %>
+        <% 6.times do |k| %>
+          <div class="home-card">
+              <%= image_tag "home#{k}.jpg", crop: :fill, size: 80 %>
+              <% k += 1 %>
+          </div>
+        <% end %>
+      <% p = 18 %>
+        <% 4.times do |l| %>
+          <div class="home-card">
+            <%= image_tag "home#{l}.jpg", crop: :fill, size: 80 %>
+            <% l += 1 %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

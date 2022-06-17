@@ -24,11 +24,8 @@
               <%= link_to accept_order_path(order), method: :patch, class: "half-width text-success left" do %>
                 <i class="fas fa-check"></i>
               <% end %>
-<<<<<<< HEAD
-              <%= link_to reject_order_path(order), class: "btn custom-btn half-width right", data: { offers_target: "button", action: "click->offers#rejectOffer" } do %>
-=======
+
               <%= link_to reject_order_path(order), class: "half-width text-danger right", data: { offers_target: "button", action: "click->offers#rejectOffer" } do %>
->>>>>>> 622ba7ade04c9f28caa30c50e2f4e9d6cdbc406e
                 <i class="fas fa-times"></i>
               <% end %>
             </div>
