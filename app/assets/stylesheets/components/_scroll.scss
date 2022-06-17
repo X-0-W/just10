@@ -16,9 +16,9 @@
   -webkit-transform:translateX(0%);
   transform:translateX(0%);
   /* Apply animation to this element */
-  -moz-animation: scroll-left 30s linear infinite;
-  -webkit-animation: scroll-left 30s linear infinite;
-  animation: scroll-left 30s linear infinite;
+  -moz-animation: scroll-left 60s linear infinite;
+  -webkit-animation: scroll-left 60s linear infinite;
+  animation: scroll-left 60s linear infinite;
 }
 
 /* Move it (define the animation) */
@@ -53,9 +53,9 @@
   -webkit-transform:translateX(-0%);
   transform:translateX(-0%);
   /* Apply animation to this element */
-  -moz-animation: scroll-right 30s linear infinite;
-  -webkit-animation: scroll-right 30s linear infinite;
-  animation: scroll-right 30s linear infinite;
+  -moz-animation: scroll-right 60s linear infinite;
+  -webkit-animation: scroll-right 60s linear infinite;
+  animation: scroll-right 60s linear infinite;
 }
 
 /* Move it (define the animation) */
